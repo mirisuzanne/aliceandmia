@@ -1,4 +1,7 @@
-aliceandmia
-===========
+Alice & Mia – Coming Soon!
+==========================
 
-The future online home for Alice &amp; Mia
+A podcast by [Allison Washington][alice] &amp; [Miriam Suzanne][mia].
+
+[alice]: http://allisonwashington.net
+[mia]: http://miriamsuzanne.com
