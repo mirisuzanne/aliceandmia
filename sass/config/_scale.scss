@@ -31,7 +31,7 @@ $text-sizes: (
   'h2': calc(1rem + 0.75vw),
   'h3': calc(1rem + 0.5vw),
 
-  'boiler': 1rem ('text-ratio': -0.5),
+  'boiler': 1rem ('text-ratio': -0.675),
   'feature': 'h2',
 );
 
@@ -51,7 +51,7 @@ $spacing-sizes: (
   'shim-plus': 'shim' ('times': 1.5),
   'half-shim': 'shim' ('divide': 2),
   'quarter-shim': 'shim' ('divide': 4),
-  'spacer': calc(%s + %s) ('shim', 3vmin),
+  'spacer': calc(%s + %s) ('shim', 4vmin),
 );
 
 $sizes: map-merge($sizes, $spacing-sizes);
@@ -64,6 +64,7 @@ $sizes: map-merge($sizes, $spacing-sizes);
 /// @preview sizes; style: output-only
 $page-sizes: (
   'page': 28rem,
+  'background': calc(%s + %s) ('rhythm' ('times': 6), 16vw),
 );
 
 $sizes: map-merge($sizes, $page-sizes);

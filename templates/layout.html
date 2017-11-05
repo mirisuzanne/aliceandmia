@@ -14,13 +14,7 @@
   </h1>
 
   <nav data-layout="nav">
-    {% for nav in config.nav %}
-      {{ utility.link_if(
-        url=nav.url,
-        content=nav.text,
-        data_nav=nav.text
-      ) }}
-    {% endfor %}
+    {{ nav(config.nav) }}
   </nav>
 
   <main data-layout="main">
@@ -31,6 +25,7 @@
     <p class="copyright">
       Copyright &copy; {{ now.year }} {{ authors(config.authors) }}
     </p>
+    {{ footer_links(config.footer_links) }}
   </footer>
 {% endblock %}
 
@@ -48,4 +43,40 @@
   {% endfor %}
 
   {{ copyright|join(' ')|typogrify }}
+{% endmacro %}
+
+
+{% macro nav(list) %}
+  {% for item in list %}
+    {% set icon = utility.icon('newtab') if ('://' in item.url) else '' %}
+    {% set tag = item.tag or none %}
+    {% set has_posts = true if (tag and get_blog_entries_by_tag(tag)) else none %}
+    {% set url = link_to('tag', tag=tag) if has_posts else (item.url or none) %}
+
+    {% if url %}
+      {{ utility.link_if(
+        url=url,
+        content=item.text + icon,
+        data_nav=item.text
+      ) }}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro footer_links(list) %}
+  {% if list %}
+    <ul class="footer-links">
+      {% for link in list %}
+        {{ utility.icon(link.icon) if link.icon }}
+
+        {{ utility.link_if(
+          url=link.url,
+          content=link.text
+        ) }}
+
+        {{ '|' if not loop.last }}
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endmacro %}

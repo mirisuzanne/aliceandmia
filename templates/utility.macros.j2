@@ -23,21 +23,21 @@
 {% macro link_if(
   url,
   content=none
-) %}
-  {% set content = content if (content != none) else caller() %}
+) -%}
+  {%- set content = content if (content != none) else caller() -%}
 
   {%- if url -%}
     <a href="{{ url }}"
-      {{ show_attrs(**kwargs) }}>
-      {{ content|safe }}
+      {{- show_attrs(**kwargs) -}}>
+      {{- content|safe -}}
     </a>
   {%- else -%}
     <span
-      {{ show_attrs(**kwargs) }}>
-      {{ content|safe }}
+      {{- show_attrs(**kwargs) -}}>
+      {{- content|safe -}}
     </span>
   {%- endif -%}
-{% endmacro %}
+{%- endmacro %}
 
 
 {# Buttons #}

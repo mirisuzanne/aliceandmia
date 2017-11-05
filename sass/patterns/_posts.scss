@@ -2,6 +2,13 @@
 // =====
 
 
+[data-list],
+.rst-body {
+  margin: size('spacer') auto;
+  max-width: size('page');
+}
+
+
 .post {
   &:not(:last-child) {
     @include after('& & &') {
@@ -27,9 +34,16 @@
 }
 
 
-.post-meta {
+.post-meta,
+.rst-meta {
   font-size: size('boiler');
   margin-bottom: size('half-shim');
+}
+
+
+.rst-meta {
+  margin: 0 auto;
+  max-width: size('page');
 }
 
 

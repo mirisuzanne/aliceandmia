@@ -4,16 +4,18 @@
 
 [data-heading='rst'] {
   font-size: size('h2');
+  margin: size('gutter') auto 0;
+  max-width: size('page');
 }
 
 
 blockquote,
 .pullquote {
-  @include feature-type;
-  margin-bottom: size('gutter');
+  font-style: italic;
+  margin-bottom: size('shim');
 
   .attribution {
-    font-size: size('reset');
+    @include wrap-content(null);
     font-style: normal;
     font-weight: bold;
   }
@@ -21,9 +23,10 @@ blockquote,
 
 
 blockquote {
-  p {
+  p,
+  &.epigraph {
     &:not(.attribution) {
-      text-indent: -0.5em;
+      text-indent: -0.75em;
 
       @include wrap-content {
         color: color('action');

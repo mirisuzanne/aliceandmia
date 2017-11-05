@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% import 'utility.macros.j2' as utility %}
+{% import 'blog/macros.j2' as blog %}
 
 
 {%- block title -%}
@@ -47,25 +48,13 @@
 
 
 {% block body %}
-  {% if rst.fragment %}
-    <h2 data-heading="rst">
-      {{ rst.title }}
-    </h2>
-
-    <section class="rst-intro">
-    <div class="intro-inner">
-      {{ ctx.render_summary() }}
-
-      {% if config.elsewhere %}
-        {% set where = config.elsewhere[0] %}
-        {% set text = ['Read More on ', where.src]|join %}
-        {{ utility.btn(where.url, text) }}
-      {% endif %}
-    </div>
-    </section>
-
-    <section class="rst-body">
-      {{ rst.fragment }}
-    </section>
-  {% endif %}
+  {{ blog.detail(
+    title=rst.title,
+    intro=ctx.render_summary(),
+    body=rst.fragment,
+    action=ctx.config.elsewhere,
+    pub_date=ctx.pub_date,
+    post_tags=ctx.tags,
+    tag_pages=config.tag_pages
+  ) }}
 {% endblock %}

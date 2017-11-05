@@ -8,16 +8,29 @@ description: 'Podcasts & Articles by Allison Washington & Miriam Suzanne'
 location: 'home'
 nav:
   - text: 'podcast'
-    url: '/tags/Podcast/'
+    tag: 'Podcast'
   - text: 'writing'
-    url: '/tags/Writing/'
+    tag: 'Writing'
   - text: 'contact'
     url: '/contact/'
+  - text: 'support'
+    url: 'https://www.patreon.com/aliceandmia/'
+tag_pages:
+  - tag: 'Twined Fragments'
+    slug: 'tag/twinedfragments'
 authors:
   - name: 'Allison Washington'
     url: 'http://www.allisonwashington.net'
   - name: 'Miriam Suzanne'
     url: 'http://www.miriamsuzanne.com'
+footer_links:
+  - text: 'Patreon'
+    url: 'https://www.patreon.com/aliceandmia/'
+  - text: 'Twined Fragments'
+    url: 'https://medium.com/twinedfragments/'
+  - text: 'Twitter'
+    icon: 'twitter'
+    url: 'https://twitter.com/aliceandmia/'
 
 
 # settings

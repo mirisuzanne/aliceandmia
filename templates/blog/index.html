@@ -4,6 +4,16 @@
 
 
 {% block body %}
+  {% if not pagination.prev %}
+    {% set page = all_pages|filter_pages('slug', 'eq', 'index')|get_page %}
+    {{ blog.detail(
+      intro=page.render_summary(),
+      action=page.config.elsewhere,
+      pub_date=page.pub_date,
+      post_tags=page.tags
+    ) }}
+  {% endif %}
+
   <section data-list="posts">
     {% for post in pagination.get_slice() %}
       {{ blog.list(post) }}

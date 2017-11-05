@@ -1,0 +1,18 @@
+// Footer Layout
+// -------------
+
+
+[data-layout='footer'] {
+  @include font-family('alt');
+  border-top: 2px dotted color('border');
+  font-size: size('boiler');
+  margin: size('spacer') auto 0;
+  max-width: size('page');
+  padding: size('gutter') 0 0;
+  text-align: center;
+
+  p,
+  ul {
+    margin: 0 auto;
+  }
+}
