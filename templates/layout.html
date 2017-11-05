@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% import 'utility.macros.j2' as utility %}
+
+
+{% block layout %}
+  <h1
+    data-layout="header"
+    data-heading="site"
+  >
+    <a href="/" rel="home">
+      {{ config.title|typogrify }}
+    </a>
+  </h1>
+
+  <nav data-layout="nav">
+    {{ nav(config.nav) }}
+  </nav>
+
+  <main data-layout="main">
+    {% block body %}{% endblock %}
+  </main>
+
+  <footer data-layout="footer">
+    <p class="copyright">
+      Copyright &copy; {{ now.year }} {{ authors(config.authors) }}
+    </p>
+    {{ footer_links(config.footer_links) }}
+  </footer>
+{% endblock %}
+
+
+{% macro authors(data) %}
+  {% set copyright = [] %}
+
+  {% for author in data %}
+    {% set author_link = utility.link_if(author.url, author.name) %}
+    {% if copyright.append(author_link) %}{% endif %}
+
+    {% if not loop.last %}
+      {% if copyright.append('&') %}{% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {{ copyright|join(' ')|typogrify }}
+{% endmacro %}
+
+
+{% macro nav(list) %}
+  {% for item in list %}
+    {% set icon = utility.icon('newtab') if ('://' in item.url) else '' %}
+    {% set tag = item.tag or none %}
+    {% set has_posts = true if (tag and get_blog_entries_by_tag(tag)) else none %}
+    {% set url = link_to('tag', tag=tag) if has_posts else (item.url or none) %}
+
+    {% if url %}
+      {{ utility.link_if(
+        url=url,
+        content=item.text + icon,
+        data_nav=item.text
+      ) }}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro footer_links(list) %}
+  {% if list %}
+    <ul class="footer-links">
+      {% for link in list %}
+        {{ utility.icon(link.icon) if link.icon }}
+
+        {{ utility.link_if(
+          url=link.url,
+          content=link.text
+        ) }}
+
+        {{ '|' if not loop.last }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

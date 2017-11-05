@@ -1,0 +1,103 @@
+{% import "utility.macros.j2" as utility %}
+
+
+{% macro section(entries) %}
+  <section data-grid="posts">
+    {% for entry in entries %}
+      {{ list(entry) }}
+    {% endfor %}
+  </section>
+{% endmacro %}
+
+
+{% macro list(post) %}
+<article class="post">
+  <h3 data-heading="post">
+    <a href="{{ link_to('page', slug=post.slug) }}">
+      {{ post.title|typogrify }}
+    </a>
+  </h3>
+
+  <aside class="post-meta">
+    {{ pubdate(post.pub_date) }}
+    {{ tags(post.tags) }}
+  </aside>
+
+  {% if post.summary %}
+    <div class="post-summary">
+      {{ post.render_summary()|typogrify }}
+    </div>
+  {% endif %}
+</article>
+{% endmacro %}
+
+
+{% macro detail(
+  title=none,
+  intro=none,
+  body=none,
+  action=none,
+  pub_date=none,
+  post_tags=none,
+  tag_pages=none
+) %}
+  {% if title %}
+    <h2 data-heading="rst">
+      {{ title|typogrify }}
+    </h2>
+  {% endif %}
+
+  {% if pub_date or post_tags %}
+    <aside class="rst-meta">
+      {{ pubdate(pub_date) }}
+      {{ tags(post_tags) }}
+    </aside>
+  {% endif %}
+
+  {% if intro %}
+    <section class="rst-intro">
+      {{ intro|typogrify }}
+
+      {% set where = action[0] if action else none %}
+      {% set text = where.text if where else none %}
+      {% set alt = ['Read More on ', where.src]|join if where.src else none %}
+      {% set text = text or alt or 'Read More' %}
+      {{ utility.btn(where.url, text) if where else '' }}
+    </section>
+  {% endif %}
+
+  {% if body or tag_pages %}
+    <section class="rst-body">
+      {{ body|typogrify if body }}
+
+      {% for tag in post_tags %}
+        {% set tag_page = tag_pages|selectattr('tag', 'equalto', tag)|list or none %}
+        {% set tag_page = tag_page[0]['slug'] if tag_page else none %}
+        {% set tag_page = all_pages|filter_pages('slug', 'eq', tag_page)|get_page if tag_page else none %}
+        {{ tag_page.render_contents()|typogrify if tag_page }}
+      {% endfor %}
+    </section>
+  {% endif %}
+{% endmacro %}
+
+
+{% macro pubdate(pub_date) %}
+  {% if pub_date %}
+    {% if pub_date %}
+    <time datetime="{{ pub_date.isoformat() }}" pubdate="pubdate">
+      {{ pub_date.strftime("%B %d, %Y") }}
+    </time>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro tags(taglist) %}
+  {% if taglist %}
+    <i>in</i>
+    {% for tag in taglist|sort(case_sensitive=true) %}
+      {%- if not loop.first %}, {% endif -%}
+      <a href="{{ link_to('tag', tag=tag) }}" rel="tag">{{ tag }}</a>
+    {%- endfor %}
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,17 @@
+// Bios
+// ====
+
+
+.rst-intro {
+  @include feature-type;
+  margin: size('spacer') auto;
+  max-width: size('page', 'em');
+
+  @include wrap-content('') {
+    border-bottom: 2px dotted color('border');
+    display: block;
+    height: 0;
+    margin: size('spacer') auto;
+    max-width: size('page');
+  }
+}

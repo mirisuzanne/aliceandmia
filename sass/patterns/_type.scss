@@ -1,0 +1,37 @@
+// Typography
+// ==========
+
+
+[data-heading='rst'] {
+  font-size: size('h2');
+  margin: size('gutter') auto 0;
+  max-width: size('page');
+}
+
+
+blockquote,
+.pullquote {
+  font-style: italic;
+  margin-bottom: size('shim');
+
+  .attribution {
+    @include wrap-content(null);
+    font-style: normal;
+    font-weight: bold;
+  }
+}
+
+
+blockquote {
+  p,
+  &.epigraph {
+    &:not(.attribution) {
+      text-indent: -0.75em;
+
+      @include wrap-content {
+        color: color('action');
+        font-weight: bold;
+      }
+    }
+  }
+}

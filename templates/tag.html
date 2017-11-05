@@ -1,0 +1,19 @@
+{% extends "blog/archives.html" %}
+
+{% import "blog/macros.j2" as blog %}
+
+
+{% block title %}{{ tag.name }} | {{ super() }}{% endblock %}
+{% block og_url %}{{ get_full_canonical_url(builder, slug=['/tags', tag.name]|join('/')) }}{% endblock %}
+
+
+{% block location %}{{ tag.name|lower }}{% endblock %}
+
+
+{% block body %}
+  <section data-list="posts">
+    {%- for post in entries %}
+      {{ blog.list(post) }}
+    {%- endfor %}
+  </section>
+{% endblock %}

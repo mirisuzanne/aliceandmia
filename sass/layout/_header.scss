@@ -1,0 +1,38 @@
+// Header Layout
+// =============
+
+
+[data-layout='header'],
+[data-layout='nav'] {
+  a {
+    text-decoration: none;
+  }
+}
+
+
+[data-layout='header'] {
+  font-size: size('h1');
+  line-height: 1em;
+  text-align: center;
+
+  a {
+    &:link,
+    &:visited {
+      color: color('text');
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: color('action-hover');
+    }
+  }
+
+  .amp {
+    color: color('action');
+    display: inline-block;
+    font-size: 1.25em;
+    margin-left: -0.125em;
+    vertical-align: middle;
+  }
+}

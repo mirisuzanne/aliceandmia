@@ -1,0 +1,47 @@
+// Nav Layout
+// ==========
+
+
+[data-layout='nav'] {
+  padding-bottom: size('gutter');
+  text-align: center;
+}
+
+
+[data-nav] {
+  display: inline-block;
+  font-size: size('boiler');
+  font-style: italic;
+  padding: 0 size('shim');
+  position: relative;
+
+  [data-icon] {
+    @include position(50% null null 100%);
+    @include square(0.75em);
+    display: inline-block;
+    margin-left: negative('half-shim');
+    opacity: 0;
+    transform: translate3d(-150%, -50%, 0);
+    transition: transform 300ms, opacity 350ms;
+    vertical-align: baseline;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    [data-icon] {
+      opacity: 1;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+}
+
+
+@each $item in $nav {
+  [data-location='#{$item}'] {
+    [data-nav='#{$item}'] {
+      color: color('text');
+      text-decoration: underline;
+    }
+  }
+}

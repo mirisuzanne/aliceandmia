@@ -1,0 +1,35 @@
+// Layout Config
+// =============
+
+
+@function _mmx(
+  $size
+) {
+  @if map-has-key($sizes, $size) {
+    @return size($size);
+  }
+
+  @return $size;
+}
+
+
+@function mmx(
+  $min,
+  $max
+) {
+  $min: _mmx($min);
+  $max: _mmx($max);
+
+  @return minmax($min, $max);
+}
+
+
+$nav: (
+  'writing',
+  'podcast',
+  'contact',
+);
+
+
+$corners: 0 size('half-shim');
+$border-style: solid;

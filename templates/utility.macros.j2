@@ -1,0 +1,114 @@
+{# Utility Macros #}
+
+
+{# Attributes #}
+{% macro attr_if(attr, value=none) %}
+  {%- if value == true -%}
+    {{ attr }}
+  {%- elif value -%}
+    {{ attr }}="{{ value }}"
+  {%- endif -%}
+{% endmacro %}
+
+
+{% macro show_attrs() %}
+  {%- for attr, value in kwargs.items() -%}
+    {% set attr = attr|replace('_', '-') %}
+    {{ attr_if(attr, value) }}
+  {%- endfor -%}
+{% endmacro %}
+
+
+{# Links #}
+{% macro link_if(
+  url,
+  content=none
+) -%}
+  {%- set content = content if (content != none) else caller() -%}
+
+  {%- if url -%}
+    <a href="{{ url }}"
+      {{- show_attrs(**kwargs) -}}>
+      {{- content|safe -}}
+    </a>
+  {%- else -%}
+    <span
+      {{- show_attrs(**kwargs) -}}>
+      {{- content|safe -}}
+    </span>
+  {%- endif -%}
+{%- endmacro %}
+
+
+{# Buttons #}
+{% macro btn(
+  url,
+  content=none
+) %}
+  {% set content = content if (content != none) else caller() %}
+
+  {{ link_if(
+    url=url,
+    content=[content, '&nbsp;»']|join,
+    data_btn=true,
+    **kwargs
+  ) }}
+{% endmacro %}
+
+
+{# Icons #}
+{% macro icon(name) %}
+  {% include 'icons/%s.svg' % name %}
+{% endmacro %}
+
+
+{# Date & Time #}
+{% macro time(datetime, style='long', attrs={'class':'dt-start'}) %}
+  {% if datetime %}
+    {% if datetime.start and datetime.end %}
+      {% set end_style = 'mini' if (datetime.start[1] == datetime.end[1]) and (datetime.start[0] == datetime.end[0]) else style %}
+      {{- display_time(datetime.start, style, attrs={'class':'dt-start'}) -}}
+      -
+      {{- display_time(datetime.end, end_style, attrs={'class':'dt-end'}) -}}
+    {% else %}
+      {{ display_time(datetime, style, attrs) }}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro display_time(datetime, style='long', attrs={'class':'dt-start'}) -%}
+  {%- set months = {
+    '01': 'January',
+    '02': 'February',
+    '03': 'March',
+    '04': 'April',
+    '05': 'May',
+    '06': 'June',
+    '07': 'July',
+    '08': 'August',
+    '09': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'December',
+  } -%}
+
+  {%- set year = datetime[0] -%}
+  {%- set month = datetime[1] -%}
+  {%- set day = datetime[2] -%}
+  {%- set iso = [year, month or '01', day or '01']|join('-') -%}
+  {%- set month_display = months[month]|truncate(3, True, '') if style == 'short' else months[month] -%}
+
+  <time {{ show_attrs(attrs) }} {{ attr_if('datetime', iso) }}>
+    {%- if style != 'mini' -%}
+      {{ [month_display, ' ']|join('') if month_display }}
+    {%- endif -%}
+
+    {%- if day and (style == 'short' or style == 'mini') -%}
+      {{ day }}
+    {%- else -%}
+      {% if day %}{{ day }},{% endif %}
+      {{ year or '' }}
+    {%- endif -%}
+  </time>
+{%- endmacro %}

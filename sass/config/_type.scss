@@ -1,0 +1,20 @@
+// Type
+// ====
+
+
+@mixin feature-type {
+  font-size: size('feature');
+  font-style: italic;
+
+  em,
+  i {
+    font-style: normal;
+  }
+}
+
+
+@mixin amp {
+  font-family: 'amp', map-get($body-font, 'stack');
+  font-style: italic;
+  font-weight: normal;
+}

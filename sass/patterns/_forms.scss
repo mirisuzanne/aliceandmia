@@ -1,0 +1,57 @@
+// Forms
+// =====
+
+
+[data-field] {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: size('shim');
+}
+
+
+[data-label] {
+  @include font-family('alt');
+  background: color('background');
+  border-radius: $corners;
+  color: color('field-chill');
+  font-size: size('boiler');
+  margin: 0 auto negative('half-shim') size('half-shim');
+  padding: 0 size('half-shim');
+  transition: color 250ms ease;
+}
+
+
+[data-input='default'],
+[data-input='textarea'] {
+  border: 2px solid color('field-chill');
+  border-radius: $corners;
+  font-size: size('boiler');
+  padding: size('half-shim');
+  transition: border-color 250ms ease;
+  width: 100%;
+
+  &:invalid {
+    border-color: color('field-attention');
+  }
+
+  &:focus {
+    border-color: color('field-chill');
+    outline: 0;
+
+    & + [data-label] {
+      color: color('field-attention');
+    }
+  }
+}
+
+
+[data-input='textarea'] {
+  min-height: size('rhythm') * 6;
+}
+
+
+[data-actions] {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
