@@ -8,7 +8,10 @@ summary: |
   Have a question for our podcast,
   a topic you'd like us to write about,
   or just want to say hi?
-  **Leave us a note!**
+  **Leave us a note here**,
+  or send an email to `pod@aliceandmia.com`_.
+
+  .. _`pod@aliceandmia.com`: mailto:pod@aliceandmia.com
 
 
 ********************
