@@ -1,0 +1,81 @@
+// Scale Config
+// ============
+
+
+/// Sizes are contained in Sass maps,
+/// and accessed using OddBird’s Accoutrement.
+/// @link http://oddbird.net/accoutrement-scale/
+///   Accoutrement Scale
+
+
+// Ratios
+// ------
+/// @group scale
+$ratios: (
+  'text-ratio': 1.4,
+);
+
+@include herman-add('ratios', 'ratios', $ratios, 'ratio');
+
+
+// Text Sizes
+// ----------
+/// @group scale
+/// @preview sizes;
+$text-sizes: (
+  'root': 24px,
+  'responsive': calc(100% + 0.675vw),
+  'reset': 1rem,
+
+  'h1': calc(2rem + 1.5vw),
+  'h2': 'feature',
+
+  'boiler': 1rem ('text-ratio': -0.5),
+  'feature': calc(1rem + 0.75vw),
+);
+
+$sizes: map-merge($sizes, $text-sizes);
+@include herman-add('sizes', 'text-sizes', $text-sizes, 'size');
+
+
+// Spacing Sizes
+// -------------
+/// @group scale
+/// @preview sizes; style: ruler
+$spacing-sizes: (
+  'rhythm': 'root' ('text-ratio': 1, 'convert-units': 'rem'),
+  'gutter': 'rhythm',
+  'double-gutter': 'gutter' ('times': 2),
+  'shim': 'gutter' ('divide': 2),
+  'shim-plus': 'shim' ('times': 1.5),
+  'half-shim': 'shim' ('divide': 2),
+  'quarter-shim': 'shim' ('divide': 4),
+  'spacer': calc(%s + %s) ('shim', 3vmin),
+);
+
+$sizes: map-merge($sizes, $spacing-sizes);
+@include herman-add('sizes', 'spacing-sizes', $spacing-sizes, 'size');
+
+
+// Page Sizes
+// ----------
+/// @group scale
+/// @preview sizes; style: output-only
+$page-sizes: (
+  'page': 28rem,
+);
+
+$sizes: map-merge($sizes, $page-sizes);
+@include herman-add('sizes', 'page-sizes', $page-sizes, 'size');
+
+
+// Pattern Sizes
+// -------------
+/// @group scale
+/// @preview sizes; style: output-only
+$pattern-sizes: (
+  // as needed…
+);
+
+$sizes: map-merge($sizes, $pattern-sizes);
+@include herman-add('sizes', 'pattern-sizes', $pattern-sizes, 'size');

@@ -1,0 +1,119 @@
+{% import 'utility.macros.j2' as utility %}
+
+
+{% macro label(
+  text,
+  hidden=false
+) %}
+  <span
+    data-label
+    utility.attr_if('hidden', hidden)
+  >
+    {{ text }}
+  </span>
+{% endmacro %}
+
+
+{% macro field(
+  id
+) %}
+  <label
+    for="{{ id }}"
+    data-field="{{ id }}"
+    {% for attr in kwargs %}
+      utility.attr_if(attr, kwargs[attr])
+    {% endfor %}
+  >
+    {{ caller() }}
+  </label>
+{% endmacro %}
+
+
+{% macro input_field(
+  text,
+  id,
+  name=none,
+  type='text',
+  required=true,
+  hide_label=false
+) %}
+
+  {% call field(id) %}
+    {{ input(id, name, type, required, **kwargs) }}
+    {{ label(text, hide_label) }}
+  {% endcall %}
+{% endmacro %}
+
+
+{% macro input(
+  id,
+  name=none,
+  type='text',
+  required=false
+) %}
+  {% set input_types = [
+    'text',
+    'password',
+    'search',
+    'email',
+    'url',
+    'tel',
+    'number',
+    'date',
+    'month',
+    'week',
+    'time',
+    'datetime',
+    'datetime-local',
+    'color'
+  ] %}
+  {% set data_type = 'default' if (type in input_types) else type %}
+
+  {% if type == 'textarea' %}
+    <textarea
+      id="{{ id }}"
+      name="{{ name or id }}"
+      data-input="textarea"
+      {{ utility.attr_if('required', required) }}
+      {% for attr in kwargs %}
+        utility.attr_if(attr, kwargs[attr])
+      {% endfor %}
+    ></textarea>
+  {% else %}
+    <input
+      type="{{ type }}"
+      id="{{ id }}"
+      name="{{ name or id }}"
+      data-input="{{ data_type }}"
+      {{ utility.attr_if('required', required) }}
+      {% for attr in kwargs %}
+        utility.attr_if(attr, kwargs[attr])
+      {% endfor %}
+    />
+  {% endif %}
+{% endmacro %}
+
+
+{% macro submit(content=none) %}
+  {% set content = content if (content != none) else caller() %}
+
+  <button
+    type="submit"
+    data-btn
+  >
+    {{ content }}
+  </button>
+{% endmacro %}
+
+
+{% macro actions(
+  main,
+  has_caller=none
+) %}
+  {% set caller = caller() if has_caller else '' %}
+
+  <div data-actions>
+    {{ submit(main) }}
+    {{ caller }}
+  </div>
+{% endmacro %}

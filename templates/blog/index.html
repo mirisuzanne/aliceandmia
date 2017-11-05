@@ -1,0 +1,16 @@
+{% extends "blog/archives.html" %}
+
+{% import "blog/macros.j2" as blog %}
+
+
+{% block body %}
+  <section data-list="posts">
+    {% for post in pagination.get_slice() %}
+      {{ blog.list(post) }}
+    {% endfor %}
+  </section>
+
+  {% if (pagination.pages > 1) %}
+    {{ pagination }}
+  {% endif %}
+{% endblock %}

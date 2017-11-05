@@ -1,0 +1,58 @@
+// Root
+// ====
+
+
+:root {
+  @include font-family('body');
+  color: color('text');
+  font-size: size('root');
+  font-size: size('responsive'); // sass-lint:disable-line no-duplicate-properties
+}
+
+
+body {
+  line-height: ratio('text-ratio');
+  padding: size('gutter');
+}
+
+
+.amp {
+  font-family: map-get($body-font, 'stack');
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+a {
+  &,
+  &:link,
+  &:visited {
+    color: color('action');
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    text-decoration-color: color('border');
+    text-decoration-skip: ink;
+    transition: color 350ms, text-decoration-color 300ms;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: color('action-hover');
+    text-decoration-color: currentColor;
+  }
+}
+
+
+svg {
+  fill: currentColor;
+}
+
+
+p,
+ul,
+ol,
+dl {
+  margin-bottom: size('shim');
+}

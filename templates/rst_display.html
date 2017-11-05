@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% import 'utility.macros.j2' as utility %}
+
+
+{%- block title -%}
+  {{ [rst.title, super()]|join(' | ') }}
+{%- endblock -%}
+
+
+{%- block description -%}
+  {{ ctx.render_summary()|striptags or super() }}
+{%- endblock -%}
+
+
+{%- block og_url -%}
+  {{ get_full_canonical_url(ctx.builder, slug=ctx.slug) }}
+{%- endblock -%}
+
+
+{%- block og_description -%}
+  {{ ctx.render_summary()|striptags or super() }}
+{%- endblock -%}
+
+
+{%- block og_type -%}
+  {{ 'article' if ctx.pub_date else super() }}
+{%- endblock -%}
+
+
+{%- block twitter_type -%}
+  {% set has_image = (ctx.config.image and ctx.config.image[0].src) %}
+  {{ 'summary_large_image' if has_image else super() }}
+{%- endblock -%}
+
+
+{% block extra_og %}
+  {% if ctx.pub_date %}
+    <meta property="article:published_time" content="{{ ctx.pub_date.isoformat() }}" />
+  {% endif %}
+  {% if ctx.tags %}
+    {% for tag in ctx.tags %}
+      <meta property="article:tag" content="{{ tag }}" />
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+
+{% block body %}
+  {% if rst.fragment %}
+    <h2 data-heading="rst">
+      {{ rst.title }}
+    </h2>
+
+    <section class="rst-intro">
+      {{ ctx.render_summary() }}
+
+      {% if config.elsewhere %}
+        {% set where = config.elsewhere[0] %}
+        {% set text = ['Read More on ', where.src]|join %}
+        {{ utility.btn(where.url, text) }}
+      {% endif %}
+    </section>
+
+    <section class="rst-body">
+      {{ rst.fragment }}
+    </section>
+  {% endif %}
+{% endblock %}

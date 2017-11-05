@@ -1,0 +1,44 @@
+{% import 'form.macros.j2' as form %}
+{% import 'utility.macros.j2' as utility %}
+
+
+{% macro show_form(
+  slug,
+  data
+) %}
+  {% set page = all_pages|filter_pages('slug', 'eq', slug)|get_page %}
+  {% set data = page.config[data][0] %}
+
+  {% set email = data['email'] %}
+  {% set next = 'http://www.aliceandmia.com/%s' % data['next'] %}
+  {% set submit = data['submit'] or 'submit' %}
+
+  <form
+    data-module="contact-form"
+    action="https://formspree.io/{{ email }}"
+    method="POST">
+
+    <input type="hidden" name="_next" value="{{ next }}" />
+    <input type="text" name="_gotcha" style="display:none" />
+
+    {{ form.input_field(
+      text='Name',
+      id='contact-name',
+    ) }}
+
+    {{ form.input_field(
+      text='Email',
+      id='contact-email',
+      name='_replyto',
+      type='email',
+    ) }}
+
+    {{ form.input_field(
+      text='Message',
+      id='contact-message',
+      type='textarea',
+    ) }}
+
+    {{ form.actions(submit) }}
+  </form>
+{% endmacro %}

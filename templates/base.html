@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="initial-scale=1" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+  <meta http-equiv="cleartype" content="on" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+
+  <!-- Info -->
+  <title>{% block title %}{{ config.title }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
+  <link href="/feed.atom" rel="alternate" title="Feed" type="application/atom+xml">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  {% set image = config.image[0].src if config.image else 'hero.jpg' %}
+  {% set image = image if '://' in image else [config.canonical_url, 'static/pictures/', image]|join('') %}
+  <meta property="og:title" content="{{ self.title() }}" />
+  <meta property="og:site_name" content="{{ config.title }}" />
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:image" content="{{ image }}" />
+  <meta property="og:url" content="{% block og_url %}{{ config.canonical_url }}{% endblock og_url %}" />
+  <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}" />
+  <meta name="twitter:card" content="{% block twitter_type %}summary{% endblock %}">
+  <meta name="twitter:site" content="@aliceandmia">
+  <meta name="twitter:creator" content="@aliceandmia">
+  {% block extra_og %}{% endblock %}
+
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="/static/images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/favicons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/favicons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/static/images/favicons/apple-touch-icon-precomposed.png">
+
+  <!-- TypeKit Fonts -->
+  <script src="https://use.typekit.net/slx1xnq.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <!-- Styles -->
+  {% block styles %}
+  <link rel="stylesheet" href="/static/css/screen.css" />
+  {% endblock %}
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body data-location="{% block location %}{{ config.location }}{% endblock %}">
+  {% block layout %}{% endblock %}
+</body>
+</html>

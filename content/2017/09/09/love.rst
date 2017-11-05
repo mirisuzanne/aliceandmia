@@ -1,0 +1,42 @@
+public: yes
+tags: ['Writing', 'Twined Fragments']
+elsewhere:
+  - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
+    src: 'PS I Love You'
+summary: |
+  “A few months into my gender transition
+  I’m living full-time as a woman.
+  I don’t have many guy friends, but my guitarist is one.
+  Parting, I lean in for the cheek-kiss
+  but he plants a good one right on my lips.
+  His wife raises an amused eyebrow,
+  *Ha, well, I guess you two get to do that now.*”
+
+
+********************
+Sex, Love, & Romance
+********************
+
+Twined Fragments is an ongoing collaboration
+between authors `Miriam Suzanne`_ and `Allison Washington`_.
+Each fragment is sparked by the previous,
+as trans women of different generations
+pass their memories back and forth,
+reflecting on lives and transitions separated by a quarter-century.
+
+Working through these fragments of reflection
+lets us touch on moments and emotions
+that are sometimes too painful to interrogate deeply.
+In conversation, we do together what we could not alone.
+The result leaves us with more questions than answers,
+and we love that.
+
+We want those questions,
+and hope you will extend this conversation in the comments below.
+
+.. _Miriam Suzanne: http://miriamsuzanne.com
+.. _Allison Washington: http://allisonwashington.net
+
+.. callmacro:: utility.macros.j2#btn
+  :url: 'https://medium.com/twined-fragments'
+  :content: 'Follow along on Medium'

@@ -1,0 +1,40 @@
+---
+
+
+# site
+title: 'Alice & Mia'
+email: 'hosts@aliceandmia.com'
+description: 'Podcasts & Articles by Allison Washington & Miriam Suzanne'
+location: 'home'
+nav:
+  - text: 'podcast'
+    url: '/tags/Podcast/'
+  - text: 'writing'
+    url: '/tags/Writing/'
+authors:
+  - name: 'Allison Washington'
+    url: 'http://www.allisonwashington.net'
+  - name: 'Miriam Suzanne'
+    url: 'http://www.miriamsuzanne.com'
+
+
+# settings
+active_modules: [
+  blog,
+  current,
+  denormalize_config,
+  jinja_macros,
+  pages,
+  rst,
+  tags,
+  typogrify,
+  uniqify,
+  urls,
+  wrap
+  ]
+canonical_url: 'http://www.aliceandmia.com/'
+output_folder: '../docs'
+template_path: '../templates'
+modules:
+  blog:
+    index_url: '/'

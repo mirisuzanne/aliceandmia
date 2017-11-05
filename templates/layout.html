@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% import 'utility.macros.j2' as utility %}
+
+
+{% block layout %}
+  <h1
+    data-layout="header"
+    data-heading="site"
+  >
+    <a href="/" rel="home">
+      {{ config.title|typogrify }}
+    </a>
+  </h1>
+
+  <nav data-layout="nav">
+    {% for nav in config.nav %}
+      {{ utility.link_if(
+        url=nav.url,
+        content=nav.text,
+        data_nav=nav.text
+      ) }}
+    {% endfor %}
+  </nav>
+
+  <main data-layout="main">
+    {% block body %}{% endblock %}
+  </main>
+
+  <footer data-layout="footer">
+    <p class="copyright">
+      Copyright &copy; {{ now.year }} {{ authors(config.authors) }}
+    </p>
+  </footer>
+{% endblock %}
+
+
+{% macro authors(data) %}
+  {% set copyright = [] %}
+
+  {% for author in data %}
+    {% set author_link = utility.link_if(author.url, author.name) %}
+    {% if copyright.append(author_link) %}{% endif %}
+
+    {% if not loop.last %}
+      {% if copyright.append('&') %}{% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {{ copyright|join(' ')|typogrify }}
+{% endmacro %}

@@ -1,0 +1,37 @@
+// Fonts Config
+// ============
+
+
+// Body Font
+// ---------
+/// Freight Text Pro is the primary font of the OddBird brand.
+/// @group fonts
+/// @preview font-specimen; key: body; show: regular, italic, bold, bold italic
+/// @link http://oddbird.net/accoutrement-type/docs/
+///   Accoutrement Type
+$body-font: (
+  'name': 'freight-text-pro',
+  'stack': ('Baskerville', 'Palatino', 'Cambria', 'Georgia', serif),
+  'source': 'https://typekit.com/fonts/freight-text',
+);
+
+@include add-font('body', $body-font);
+@include herman-add('font', 'body', $body-font);
+
+
+// Alt Font
+// --------
+/// Freight Sans Pro provides a sans-serif alternative,
+/// still in the same family as our primary font.
+/// @group fonts
+/// @preview font-specimen; key: alt; show: regular, italic, bold, bold italic
+/// @link http://oddbird.net/accoutrement-type/docs/
+///   Accoutrement Type
+$alt-font: (
+  'name': 'freight-sans-pro',
+  'stack': ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+  'source': 'https://typekit.com/fonts/freight-sans',
+);
+
+@include add-font('alt', $alt-font);
+@include herman-add('font', 'alt', $alt-font);
