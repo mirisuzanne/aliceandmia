@@ -11,3 +11,10 @@
     font-style: normal;
   }
 }
+
+
+@mixin amp {
+  font-family: map-get($body-font, 'stack');
+  font-style: italic;
+  font-weight: normal;
+}

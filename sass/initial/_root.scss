@@ -3,8 +3,8 @@
 
 
 :root {
+  @include contrasted('background');
   @include font-family('body');
-  color: color('text');
   font-size: size('root');
   font-size: size('responsive'); // sass-lint:disable-line no-duplicate-properties
 }
@@ -12,14 +12,15 @@
 
 body {
   line-height: ratio('text-ratio');
+  max-width: 100vw;
+  overflow-x: hidden;
   padding: size('gutter');
+  text-shadow: 0 1px 0 color(#fff);
 }
 
 
 .amp {
-  font-family: map-get($body-font, 'stack');
-  font-style: italic;
-  font-weight: normal;
+  @include amp;
 }
 
 

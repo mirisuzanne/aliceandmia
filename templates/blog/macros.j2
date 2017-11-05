@@ -12,16 +12,16 @@
 
 {% macro list(post) %}
 <article class="post">
-  <div class="post-meta">
-    {{ pubdate(post.pub_date) }}
-    {{ tags(post.tags) }}
-  </div>
-
   <h3 data-heading="post">
     <a href="{{ link_to('page', slug=post.slug) }}">
       {{ post.title|typogrify }}
     </a>
   </h3>
+
+  <aside class="post-meta">
+    {{ pubdate(post.pub_date) }}
+    {{ tags(post.tags) }}
+  </aside>
 
   {% if post.summary %}
     <div class="post-summary">

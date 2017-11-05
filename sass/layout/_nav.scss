@@ -13,10 +13,6 @@
   font-size: size('boiler');
   font-style: italic;
   padding: size('quarter-shim') size('shim');
-
-  & + & {
-    margin-left: size('h1');
-  }
 }
 
 

@@ -28,10 +28,11 @@ $text-sizes: (
   'reset': 1rem,
 
   'h1': calc(2rem + 1.5vw),
-  'h2': 'feature',
+  'h2': calc(1rem + 0.75vw),
+  'h3': calc(1rem + 0.5vw),
 
   'boiler': 1rem ('text-ratio': -0.5),
-  'feature': calc(1rem + 0.75vw),
+  'feature': 'h2',
 );
 
 $sizes: map-merge($sizes, $text-sizes);

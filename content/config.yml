@@ -11,6 +11,8 @@ nav:
     url: '/tags/Podcast/'
   - text: 'writing'
     url: '/tags/Writing/'
+  - text: 'contact'
+    url: '/contact/'
 authors:
   - name: 'Allison Washington'
     url: 'http://www.allisonwashington.net'

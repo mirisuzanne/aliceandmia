@@ -1,0 +1,39 @@
+// Posts
+// =====
+
+
+.post {
+  &:not(:last-child) {
+    @include after('& & &') {
+      @include amp;
+      color: color('border');
+      display: block;
+      padding: size('spacer') size('gutter');
+      text-align: center;
+    }
+  }
+}
+
+
+[data-heading='post'] {
+  font-size: size('h3');
+
+  a {
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+
+.post-meta {
+  font-size: size('boiler');
+  margin-bottom: size('half-shim');
+}
+
+
+[pubdate] {
+  @include font-family('alt');
+  font-weight: bold;
+}

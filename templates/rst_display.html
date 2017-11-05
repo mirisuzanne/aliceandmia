@@ -53,6 +53,7 @@
     </h2>
 
     <section class="rst-intro">
+    <div class="intro-inner">
       {{ ctx.render_summary() }}
 
       {% if config.elsewhere %}
@@ -60,6 +61,7 @@
         {% set text = ['Read More on ', where.src]|join %}
         {{ utility.btn(where.url, text) }}
       {% endif %}
+    </div>
     </section>
 
     <section class="rst-body">

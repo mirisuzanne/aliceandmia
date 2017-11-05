@@ -1,0 +1,17 @@
+// Bios
+// ====
+
+
+.rst-intro {
+  @include feature-type;
+  grid-column: 2 / span 3;
+  margin: 0 calc(100vw / -2 + #{size('gutter')} + 50%);
+  padding: size('gutter') 0 size('spacer');
+  position: relative;
+}
+
+
+.intro-inner {
+  margin: 0 auto;
+  max-width: size('page', 'em');
+}

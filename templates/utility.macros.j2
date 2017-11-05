@@ -48,8 +48,8 @@
   {% set content = content if (content != none) else caller() %}
 
   {{ link_if(
-    url,
-    content,
+    url=url,
+    content=[content, '&nbsp;»']|join,
     data_btn=true,
     **kwargs
   ) }}
