@@ -1,7 +1,17 @@
-aliceandmia
-===========
+Alice & Mia – Coming Soon!
+==========================
 
-The future online home for Alice &amp; Mia…
+aliceandmia.com
+
+Welcome to the collaborative
+writing and (future) podcasting
+of trans-feminine authors
+[Allison Washington][alice] &amp; [Miriam Suzanne][mia] –
+exploring gender and transition
+separated by a quarter-century.
+
+[alice]: http://allisonwashington.net
+[mia]: http://miriamsuzanne.com
 
 
 Development
