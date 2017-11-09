@@ -1,7 +1,4 @@
 public: yes
-elsewhere:
-  - url: 'https://www.patreon.com/aliceandmia/'
-    text: 'Support us on Patreon'
 summary: |
   Welcome to the collaborative
   writing and (future) podcasting

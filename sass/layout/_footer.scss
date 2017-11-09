@@ -5,11 +5,25 @@
 [data-layout='footer'] {
   @include font-family('alt');
   border-top: 2px dotted color('border');
+  color: color('text' ('rgba': 0.75));
   font-size: size('boiler');
   margin: size('spacer') auto 0;
   max-width: size('page');
   padding: size('gutter') 0 0;
   text-align: center;
+
+  a {
+    &:link,
+    &:visited {
+      color: color('action' ('rgba': 0.75));
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: color('action-hover');
+    }
+  }
 
   p,
   ul {

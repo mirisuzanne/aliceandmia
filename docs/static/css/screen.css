@@ -286,11 +286,16 @@ dl {
 [data-layout='footer'] {
   font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   border-top: 2px dotted #b3c9d0;
+  color: rgba(23, 60, 72, 0.75);
   font-size: 0.79683rem;
   margin: calc(0.7rem + 4vmin) auto 0;
   max-width: 28rem;
   padding: 1.4rem 0 0;
   text-align: center; }
+  [data-layout='footer'] a:link, [data-layout='footer'] a:visited {
+    color: rgba(172, 0, 86, 0.75); }
+  [data-layout='footer'] a:focus, [data-layout='footer'] a:hover, [data-layout='footer'] a:active {
+    color: #266478; }
   [data-layout='footer'] p,
   [data-layout='footer'] ul {
     margin: 0 auto; }
@@ -315,6 +320,34 @@ dl {
   background-color: #266478;
   -webkit-transform: scale(1.05);
   transform: scale(1.05); }
+
+::-webkit-input-placeholder {
+  color: #173c48;
+  font-style: italic;
+  opacity: 0.5;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease; }
+
+:-ms-input-placeholder {
+  color: #173c48;
+  font-style: italic;
+  opacity: 0.5;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease; }
+
+::-ms-input-placeholder {
+  color: #173c48;
+  font-style: italic;
+  opacity: 0.5;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease; }
+
+::placeholder {
+  color: #173c48;
+  font-style: italic;
+  opacity: 0.5;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease; }
 
 [data-field] {
   display: -webkit-box;
@@ -356,6 +389,18 @@ dl {
     [data-input='default']:focus + [data-label],
     [data-input='textarea']:focus + [data-label] {
       color: #ac0056; }
+    [data-input='default']:focus::-webkit-input-placeholder,
+    [data-input='textarea']:focus::-webkit-input-placeholder {
+      opacity: 0.25; }
+    [data-input='default']:focus:-ms-input-placeholder,
+    [data-input='textarea']:focus:-ms-input-placeholder {
+      opacity: 0.25; }
+    [data-input='default']:focus::-ms-input-placeholder,
+    [data-input='textarea']:focus::-ms-input-placeholder {
+      opacity: 0.25; }
+    [data-input='default']:focus::placeholder,
+    [data-input='textarea']:focus::placeholder {
+      opacity: 0.25; }
 
 [data-input='textarea'] {
   min-height: 8.4rem; }

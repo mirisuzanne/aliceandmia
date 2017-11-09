@@ -2,6 +2,14 @@
 // =====
 
 
+::placeholder {
+  color: color('text');
+  font-style: italic;
+  opacity: 0.5;
+  transition: opacity 250ms ease;
+}
+
+
 [data-field] {
   display: flex;
   flex-direction: column-reverse;
@@ -40,6 +48,10 @@
 
     & + [data-label] {
       color: color('field-attention');
+    }
+
+    &::placeholder {
+      opacity: 0.25;
     }
   }
 }

@@ -3,17 +3,28 @@
 {% import "blog/macros.j2" as blog %}
 
 
+{% set tag_slug = config.tag_pages|selectattr('tag', 'equalto', tag.name)|list or none %}
+{% set tag_slug = tag_slug[0]['slug'] if tag_slug else none %}
+{% set page = all_pages|filter_pages('slug', 'eq', tag_slug)|get_page if tag_slug else none %}
+
+
 {% block title %}{{ tag.name }} | {{ super() }}{% endblock %}
 {% block og_url %}{{ get_full_canonical_url(builder, slug=['/tags', tag.name]|join('/')) }}{% endblock %}
 
 
-{% block location %}{{ tag.name|lower }}{% endblock %}
+{% block location %}{{ page.config.location if page else tag.name|lower }}{% endblock %}
 
 
 {% block body %}
+  {% if page %}
+    {{ blog.detail(
+      intro=page.render_summary()
+    ) }}
+  {% endif %}
+
   <section data-list="posts">
-    {%- for post in entries %}
+    {% for post in entries %}
       {{ blog.list(post) }}
-    {%- endfor %}
+    {% endfor %}
   </section>
 {% endblock %}

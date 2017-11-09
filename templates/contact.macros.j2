@@ -22,7 +22,7 @@
     <input type="text" name="_gotcha" style="display:none" />
 
     {{ form.input_field(
-      text='Name',
+      text='Name (or fun alias)',
       id='contact-name',
     ) }}
 
@@ -37,6 +37,12 @@
       text='Message',
       id='contact-message',
       type='textarea',
+    ) }}
+
+    {{ form.input_field(
+      text='Identity, pronouns, location, etc…',
+      id='identity',
+      placeholder='e.g. Gender-confused in Lesotho (she)'
     ) }}
 
     {{ form.actions(submit) }}

@@ -18,6 +18,8 @@ nav:
 tag_pages:
   - tag: 'Twined Fragments'
     slug: 'tag/twinedfragments'
+  - tag: 'Writing'
+    slug: 'tag/writing'
 authors:
   - name: 'Allison Washington'
     url: 'http://www.allisonwashington.net'

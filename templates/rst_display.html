@@ -49,7 +49,7 @@
 
 {% block body %}
   {{ blog.detail(
-    title=rst.title,
+    title=rst.title if not ctx.config.hide_title,
     intro=ctx.render_summary(),
     body=rst.fragment,
     action=ctx.config.elsewhere,

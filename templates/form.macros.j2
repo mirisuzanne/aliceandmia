@@ -7,9 +7,9 @@
 ) %}
   <span
     data-label
-    utility.attr_if('hidden', hidden)
+    {{ utility.attr_if('hidden', hidden) }}
   >
-    {{ text }}
+    {{ text|typogrify }}
   </span>
 {% endmacro %}
 
@@ -21,7 +21,7 @@
     for="{{ id }}"
     data-field="{{ id }}"
     {% for attr in kwargs %}
-      utility.attr_if(attr, kwargs[attr])
+      {{ utility.attr_if(attr, kwargs[attr]) }}
     {% endfor %}
   >
     {{ caller() }}
@@ -37,9 +37,10 @@
   required=true,
   hide_label=false
 ) %}
+  {% set attrs = kwargs if kwargs else {} %}
 
   {% call field(id) %}
-    {{ input(id, name, type, required, **kwargs) }}
+    {{ input(id, name, type, required, **attrs) }}
     {{ label(text, hide_label) }}
   {% endcall %}
 {% endmacro %}
@@ -49,7 +50,7 @@
   id,
   name=none,
   type='text',
-  required=false
+  required=true
 ) %}
   {% set input_types = [
     'text',
@@ -76,7 +77,7 @@
       data-input="textarea"
       {{ utility.attr_if('required', required) }}
       {% for attr in kwargs %}
-        utility.attr_if(attr, kwargs[attr])
+        {{ utility.attr_if(attr, kwargs[attr]) }}
       {% endfor %}
     ></textarea>
   {% else %}
@@ -87,7 +88,7 @@
       data-input="{{ data_type }}"
       {{ utility.attr_if('required', required) }}
       {% for attr in kwargs %}
-        utility.attr_if(attr, kwargs[attr])
+        {{ utility.attr_if(attr, kwargs[attr]) }}
       {% endfor %}
     />
   {% endif %}

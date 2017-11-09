@@ -1,4 +1,14 @@
 public: no
+location: 'writing'
+summary: |
+  `Twined Fragments`_
+  is an ongoing written collaboration –
+  each fragment sparked by the previous,
+  as we pass memories back and forth,
+  reflecting on our lives and transitions
+  separated by a quarter-century.
+
+  .. _Twined Fragments: http://medium.com/twinedfragments/
 
 
 ****************
