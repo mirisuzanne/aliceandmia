@@ -39,9 +39,9 @@ accoutrement-scale@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/accoutrement-scale/-/accoutrement-scale-5.0.1.tgz#2e05f1bcb173df1b4f16f0f172dbd2ffe0f2a4a8"
 
-accoutrement-type@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/accoutrement-type/-/accoutrement-type-3.1.0.tgz#5306b176672cdc49fbba6cf7b719fa4d7ae65ec2"
+accoutrement-type@^3.2.0-beta.1:
+  version "3.2.0-beta.1"
+  resolved "https://registry.yarnpkg.com/accoutrement-type/-/accoutrement-type-3.2.0-beta.1.tgz#02299f7b50edb601dbb5c08221a8ab39fb0a1e8c"
 
 acorn-jsx@^3.0.0:
   version "3.0.1"
@@ -2967,7 +2967,7 @@ sassdoc-extras@^2.4.1:
   dependencies:
     marked "^0.3.0"
 
-sassdoc-theme-herman@^1.0.0-alpha.13:
+sassdoc-theme-herman@^1.0.0-alpha.15:
   version "1.0.0-alpha.15"
   resolved "https://registry.yarnpkg.com/sassdoc-theme-herman/-/sassdoc-theme-herman-1.0.0-alpha.15.tgz#0e83a529cc0d6e54c4805b846767262b40d5c851"
   dependencies:

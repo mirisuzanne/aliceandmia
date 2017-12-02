@@ -14,7 +14,7 @@
 
 
 @mixin amp {
-  font-family: 'amp', map-get($body-font, 'stack');
+  @include font-family('amp');
   font-style: italic;
   font-weight: normal;
 }
