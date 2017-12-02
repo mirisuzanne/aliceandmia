@@ -57,6 +57,7 @@ $pattern-colors: (
 
   'page-title': 'action-hover',
   'callout': 'brand-blue' ('tint': 80%, 'rgba': 0.6),
+  'shadow': 'brand-blue' ('rgba': 0.6),
 );
 
 @include add-colors($pattern-colors);

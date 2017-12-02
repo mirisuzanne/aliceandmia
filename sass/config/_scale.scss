@@ -27,12 +27,13 @@ $text-sizes: (
   'responsive': calc(100% + 0.675vw),
   'reset': 1rem,
 
-  'h1': calc(2rem + 1.5vw),
-  'h2': calc(1rem + 0.75vw),
-  'h3': calc(1rem + 0.5vw),
+  'title': calc(2rem + 1.5vw),
+  'h1': calc(1rem + 0.75vw),
+  'h2': calc(1rem + 0.5vw),
 
   'boiler': 1rem ('text-ratio': -0.675),
-  'feature': 'h2',
+  'feature': 'h1',
+  'code': 0.8em,
 );
 
 $sizes: map-merge($sizes, $text-sizes);
@@ -64,6 +65,7 @@ $sizes: map-merge($sizes, $spacing-sizes);
 /// @preview sizes; style: output-only
 $page-sizes: (
   'page': 28rem,
+  'image-float': 'page' ('divide': 2),
   'background': calc(%s + %s) ('rhythm' ('times': 6), 16vw),
 );
 

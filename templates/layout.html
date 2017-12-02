@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 
 {% import 'utility.macros.j2' as utility %}
+{% import 'layout.macros.j2' as layout %}
 
 
 {% block layout %}
-  <h1
-    data-layout="header"
-    data-heading="site"
-  >
-    <a href="/" rel="home">
-      {{ config.title|typogrify }}
-    </a>
-  </h1>
+  {% block site_title %}
+    {{ layout.title(config) }}
+  {% endblock %}
 
   <nav data-layout="nav">
     {{ nav(config.nav) }}

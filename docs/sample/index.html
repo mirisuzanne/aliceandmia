@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="initial-scale=1" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+  <meta http-equiv="cleartype" content="on" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+
+  <!-- Info -->
+  <title>Sample RST Document | Alice &amp; Mia</title>
+  <meta name="description" content="This is a sample document for understanding how our static-site generator works, and how to write posts. This &#34;summary&#34; section will appear on post-list pages, and be used as the large-text intro paragraph on post-detail pages." />
+  <link href="/feed.atom" rel="alternate" title="Feed" type="application/atom+xml">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  
+  
+  <meta property="og:title" content="Sample RST Document | Alice &amp; Mia" />
+  <meta property="og:site_name" content="Alice &amp; Mia" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.aliceandmia.com/static/pictures/hero.jpg" />
+  <meta property="og:url" content="http://www.aliceandmia.com/sample/" />
+  <meta property="og:description" content="This is a sample document for understanding how our static-site generator works, and how to write posts. This &#34;summary&#34; section will appear on post-list pages, and be used as the large-text intro paragraph on post-detail pages." />
+  <meta name="twitter:card" content="
+  summary">
+  <meta name="twitter:site" content="@aliceandmia">
+  <meta name="twitter:creator" content="@aliceandmia">
+  
+  
+  
+
+
+  <!-- favicon.ico -->
+  <link rel="shortcut icon" href="/static/images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/favicons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/favicons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/static/images/favicons/apple-touch-icon-precomposed.png">
+
+  <!-- TypeKit Fonts -->
+  <script src="https://use.typekit.net/slx1xnq.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <!-- Styles -->
+  
+  <link rel="stylesheet" href="/static/css/screen.css" />
+  
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body data-location="home">
+  
+  
+  
+  
+  
+
+  <div data-layout="header" data-heading="site">
+    <a href="/" rel="home">
+      Alice <span class="amp">&amp;</span>&nbsp;Mia
+    </a>
+  </div>
+
+
+
+  <nav data-layout="nav">
+    
+  
+    
+    
+    
+    
+
+    
+  
+    
+    
+    
+    
+
+    
+      <a href="/tags/Writing/"
+    data-nav="writing">writing</a>
+    
+  
+    
+    
+    
+    
+
+    
+      <a href="/contact/"
+    data-nav="contact">contact</a>
+    
+  
+    
+    
+    
+    
+
+    
+      <a href="https://www.patreon.com/aliceandmia/"
+    data-nav="support">support
+  <svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 16 16"
+  width="19px"
+  height="19px"
+  data-icon="newtab"
+  >
+  <path d="M11 13h-8v-8h4.5l2-2h-8.5v12h12v-8.5l-2 2v4.5z" />
+  <path d="M16 0h-6.5l2.5 2.5-7.5 7.5 1.5 1.5 7.5-7.5 2.5 2.5v-6.5z" />
+</svg>
+</a>
+    
+  
+
+  </nav>
+
+  <main data-layout="main">
+    
+  
+  
+    <h1 data-heading="rst">
+      Sample <span class="caps">RST</span>&nbsp;Document
+    </h1>
+  
+
+  
+
+  
+    <section class="rst-intro">
+      <p>This is a sample document
+for understanding how our static-site
+generator works, and how to write posts.
+This &quot;summary&quot; section will appear on post-list pages,
+and be used as the large-text intro paragraph
+on post-detail&nbsp;pages.</p>
+
+
+      
+      
+      
+      
+      
+    </section>
+  
+
+  
+    <section class="rst-body">
+      <p><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html"><span class="caps"><span class="caps">RST</span></span></a> is a document format
+for writing rich text in a plain text file.
+Line-breaks will be ignored,
+and I like to keep lines broken apart
+roughly by phrase.
+Paragraph breaks are created using an&nbsp;empty&nbsp;line.</p>
+<p>This will start a new paragraph.
+I can also add lists and&nbsp;other&nbsp;formatting:</p>
+<ul class="simple">
+<li>Use <tt class="docutils literal">*italic text*</tt> to create <em>italic&nbsp;text</em>.</li>
+<li>Use <tt class="docutils literal">**bold text**</tt> to create <strong>bold&nbsp;text</strong>.</li>
+</ul>
+<p>Links can be added in the&nbsp;following&nbsp;format:</p>
+<pre class="literal-block">
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit,
+`this will be a link`_
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+
+.. _this will be a link: http://example.com
+</pre>
+<div class="section" id="document-metadata">
+<h2>Document&nbsp;MetaData</h2>
+<p>Each <tt class="docutils literal">.rst</tt> file in this <tt class="docutils literal">content</tt> folder
+represents a page on the site.
+Pages that are nested inside <tt class="docutils literal">year/month/day</tt> folders
+are treated as blog-posts
+to be listed on the home page and tag-pages
+(e.g. &quot;Podcast&quot; or&nbsp;&quot;Twined&nbsp;Fragments&quot;).</p>
+<p>The top part of the file includes page metadata
+in <a class="reference external" href="https://learn.getgrav.org/advanced/yaml"><span class="caps"><span class="caps">YAML</span></span></a>&nbsp;format:</p>
+<pre class="literal-block">
+public: yes
+tags: ['Writing', 'Twined Fragments']
+elsewhere:
+  - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
+    src: 'PS I Love You'
+audio: &lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
+summary: |
+  “A few months into my gender transition
+  I’m living full-time as a woman.
+  I don’t have many guy friends, but my guitarist is one.
+  Parting, I lean in for the cheek-kiss
+  but he plants a good one right on my lips.
+  His wife raises an amused eyebrow,
+  *Ha, well, I guess you two get to do that now.*”
+</pre>
+<ol class="arabic simple">
+<li><strong>public</strong>: all posts are live on the site,
+if you know the proper url,
+but &quot;public&quot; posts appear in the list.
+This allows you to create drafts
+by making them with <tt class="docutils literal">public: no</tt>.</li>
+<li><strong>tags</strong> are only allowed on posts
+in the date-specific folders.
+At this point we&#8217;re using tags
+to distinguish between <tt class="docutils literal">Writing</tt> and <tt class="docutils literal">Podcast</tt>,
+or to assign posts to a particular series,
+such as <tt class="docutils literal">Twined Fragments</tt>.
+We can add more tags as we&nbsp;see&nbsp;fit.</li>
+<li><strong>elsewhere</strong> allows us to create links to content
+that we are hosting somewhere else (e.g. Medium).
+Each item in the list requires a <tt class="docutils literal">src</tt> name
+and <tt class="docutils literal">url</tt>.</li>
+<li><strong>audio</strong> is only required for posts with embeded audio,
+e.g. podcast episodes.
+See &quot;Embeded Audio/Video Players&quot;&nbsp;section&nbsp;below.</li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><strong>summary</strong> text should start with a <tt class="docutils literal">|</tt>
+and have a short paragraph of content
+indented below, in <span class="caps"><span class="caps">RST</span></span> format.
+The summary will be used on list pages,
+and at the top of a post&nbsp;detail&nbsp;page.</li>
+</ol>
+</div>
+<div class="section" id="document-structure">
+<h2>Document&nbsp;Structure</h2>
+<p>The <span class="caps"><span class="caps">YAML</span></span> metadata must be at the top of each page,
+though not all fields are required.
+Following the metadata,
+there should be <strong>two empty lines</strong>
+followed by the page title.
+Page titles look&nbsp;like&nbsp;this:</p>
+<pre class="literal-block">
+*****************
+Sample Page Title
+*****************
+</pre>
+<p>Below the page title,
+the rest of the document is plain <span class="caps"><span class="caps">RST</span></span>.
+Sub-headings can be added
+to break up&nbsp;the&nbsp;page:</p>
+<pre class="literal-block">
+Second Level Heading
+====================
+
+Third Level Heading
+-------------------
+
+Fourth Level Heading
+~~~~~~~~~~~~~~~~~~~~
+</pre>
+<p>For unknown reasons,
+any heading that comes immediately after the page title
+will be removed.
+It&#8217;s a&nbsp;dumb&nbsp;limitation.</p>
+<p>you can also create <tt class="docutils literal">&amp; <span class="amp">&amp;</span> &amp;</tt> section-breaks
+by adding a horizontal rule (<tt class="docutils literal"><span class="pre">------</span></tt>)
+as a paragraph alone&nbsp;between&nbsp;sections:</p>
+<pre class="literal-block">
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit…
+
+------
+
+Duis aute irure dolor in reprehenderit
+in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur.
+</pre>
+</div>
+<div class="section" id="audio-video-images">
+<h2>Audio/Video <span class="amp">&amp;</span>&nbsp;Images</h2>
+<div class="section" id="images">
+<h3>Images</h3>
+<p>Images can be added in&nbsp;<span class="caps"><span class="caps">RST</span></span>:</p>
+<pre class="literal-block">
+.. figure:: path/to/image.png
+  :alt: this short text should describe the image for non-sighted users
+  :figclass: full
+  :target: http://example.com/optional-link/
+
+  This is the visible caption of the figure
+  (a simple RST paragraph).
+</pre>
+<p>Unless we are linking an image
+on someone elses site (which is risky),
+our image paths will always begin with
+<tt class="docutils literal">/static/images/</tt>.
+All our images will be added to that folder.
+The <tt class="docutils literal">:figclass:</tt> attribute
+accepts <tt class="docutils literal">full</tt> (for large images),
+or <tt class="docutils literal">left</tt> or <tt class="docutils literal">right</tt> for images
+small enough to float&nbsp;beside&nbsp;content.</p>
+</div>
+<div class="section" id="embeded-audio-video-players">
+<h3>Embeded&nbsp;Audio/Video&nbsp;Players</h3>
+<p>To embed audio,
+like an episode of the podcast,
+start by adding an <tt class="docutils literal">audio</tt> configuration
+to the <span class="caps"><span class="caps">YAML</span></span> metadata.
+This should include the full embed code
+provided by SoundCloud,
+or any&nbsp;other&nbsp;source.</p>
+<p>Once added to the metadata,
+that audio can be embeded in the page using
+the following&nbsp;embed&nbsp;code:</p>
+<pre class="literal-block">
+.. callmacro:: av.macros.j2#embed
+  :slug: '2017/12/03/introducing'
+
+  You can add an optional caption below.
+</pre>
+<p>The <strong>slug</strong> is a path to the apropriate page,
+with file-type (<tt class="docutils literal">.rst</tt>) and any start/end <tt class="docutils literal">/</tt> removed.
+If no caption is given,
+set <tt class="docutils literal">:caption: none</tt>:</p>
+<pre class="literal-block">
+.. callmacro:: av.macros.j2#embed
+  :slug: '2017/12/03/introducing'
+  :caption: none
+</pre>
+<p>You can embed audio files
+across different pages,
+by referencing the proper source page in <tt class="docutils literal">:slug:</tt>.</p>
+</div>
+</div>
+
+
+      
+    </section>
+  
+
+
+  </main>
+
+  <footer data-layout="footer">
+    <p class="copyright">
+      Copyright &copy; 2017 
+  
+
+  
+    
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+  
+
+  <a href="http://www.allisonwashington.net">Allison Washington</a> <span class="amp">&amp;</span> <a href="http://www.miriamsuzanne.com">Miriam&nbsp;Suzanne</a>
+
+    </p>
+    
+  
+    <ul class="footer-links">
+      
+        
+
+        <a href="https://www.patreon.com/aliceandmia/">Patreon</a>
+
+        |
+      
+        
+
+        <a href="https://medium.com/twinedfragments/">Twined Fragments</a>
+
+        |
+      
+        
+  <svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 19 19"
+  width="19px"
+  height="19px"
+  data-icon="twitter"
+>
+  <path
+    d="M17.5,4.5c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8C16.4,3.6,15.7,3.9,15,4c-0.6-0.6-1.5-1-2.4-1
+    c-1.8,0-3.3,1.5-3.3,3.3c0,0.3,0,0.5,0.1,0.7C6.7,6.9,4.2,5.6,2.6,3.6c-0.3,0.5-0.4,1-0.4,1.6c0,1.1,0.6,2.1,1.5,2.7
+    c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2c-0.3,0.1-0.6,0.1-0.9,0.1c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3
+    c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0C3,15.5,4.7,16,6.5,16c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4
+    C16.5,5.8,17.1,5.2,17.5,4.5L17.5,4.5z"
+    />
+</svg>
+
+
+        <a href="https://twitter.com/aliceandmia/">Twitter</a>
+
+        
+      
+    </ul>
+  
+
+  </footer>
+
+</body>
+</html>

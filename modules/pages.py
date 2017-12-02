@@ -45,6 +45,14 @@ def get_pages(builder):
         if is_static_page(page)
     ]
 
+def get_pages_posts(builder):
+    return [
+        page
+        for page
+        in builder.iter_contexts()
+        if is_static_page(page)
+        or is_blog_post(page)
+    ]
 
 def get_page(page_list):
     if page_list:
@@ -142,6 +150,7 @@ def setup(builder):
         builder,
     )
     env.globals['all_pages'] = get_pages(builder)
+    env.globals['all_pages_posts'] = get_pages_posts(builder)
     page_configs = {}
     for page in get_pages(builder):
         page_config = get_page_context(page)

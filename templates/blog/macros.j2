@@ -12,11 +12,11 @@
 
 {% macro list(post) %}
 <article class="post">
-  <h3 data-heading="post">
+  <h2 data-heading="post">
     <a href="{{ link_to('page', slug=post.slug) }}">
       {{ post.title|typogrify }}
     </a>
-  </h3>
+  </h2>
 
   <aside class="post-meta">
     {{ pubdate(post.pub_date) }}
@@ -42,9 +42,9 @@
   tag_pages=none
 ) %}
   {% if title %}
-    <h2 data-heading="rst">
+    <h1 data-heading="rst">
       {{ title|typogrify }}
-    </h2>
+    </h1>
   {% endif %}
 
   {% if pub_date or post_tags %}

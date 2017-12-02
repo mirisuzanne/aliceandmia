@@ -1,0 +1,9 @@
+{% macro title(config, has_title=false) %}
+  {% set el = 'div' if has_title else 'h1' %}
+
+  <{{ el }} data-layout="header" data-heading="site">
+    <a href="/" rel="home">
+      {{ config.title|typogrify }}
+    </a>
+  </{{ el }}>
+{% endmacro %}

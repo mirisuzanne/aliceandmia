@@ -12,7 +12,7 @@
 {% block og_url %}{{ get_full_canonical_url(builder, slug=['/tags', tag.name]|join('/')) }}{% endblock %}
 
 
-{% block location %}{{ page.config.location if page else tag.name|lower }}{% endblock %}
+{% block location %}{{ tag.name|lower }}{% endblock %}
 
 
 {% block body %}

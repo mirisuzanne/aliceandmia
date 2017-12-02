@@ -11,19 +11,13 @@
 
 .post {
   &:not(:last-child) {
-    @include after('& & &') {
-      @include amp;
-      color: color('border');
-      display: block;
-      padding: size('spacer') size('gutter');
-      text-align: center;
-    }
+    @include divider;
   }
 }
 
 
 [data-heading='post'] {
-  font-size: size('h3');
+  font-size: size('h2');
 
   a {
     &:link,

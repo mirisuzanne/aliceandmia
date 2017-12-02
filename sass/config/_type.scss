@@ -18,3 +18,30 @@
   font-style: italic;
   font-weight: normal;
 }
+
+
+@mixin _divider-style {
+  @include amp;
+  color: color('border');
+  display: block;
+  font-size: size('reset');
+  padding: size('spacer') size('gutter');
+  text-align: center;
+}
+
+
+@mixin divider(
+  $location: 'after'
+) {
+  $content: '& & &';
+
+  @if $location == 'before' {
+    @include before($content) {
+      @include _divider-style;
+    }
+  } @else {
+    @include after($content) {
+      @include _divider-style;
+    }
+  }
+}

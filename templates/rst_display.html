@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% import 'utility.macros.j2' as utility %}
+{% import 'layout.macros.j2' as layout %}
 {% import 'blog/macros.j2' as blog %}
 
 
@@ -44,6 +45,12 @@
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
   {% endif %}
+{% endblock %}
+
+
+{% block site_title %}
+  {% set has_title =  none if ctx.config.hide_title else rst.title %}
+  {{ layout.title(config, has_title) }}
 {% endblock %}
 
 
