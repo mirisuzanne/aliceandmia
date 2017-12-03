@@ -419,37 +419,9 @@ dl {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse; }
 
-.hero {
-  margin: 0 auto;
-  max-width: 30.8rem;
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease; }
-  @media (min-width: 42rem) {
-    .hero {
-      -webkit-transform: translateX(-15%);
-      transform: translateX(-15%); } }
-
 [data-heading='rst'] {
   font-size: calc(1rem + 0.75vw);
-  margin: 1.4rem auto 0;
-  max-width: 28rem; }
-  .hero + [data-heading='rst'] {
-    background: #efefef;
-    border-radius: 0.175rem;
-    margin-top: -1.4rem;
-    max-width: 29.4rem;
-    padding: 0 0.7rem;
-    position: relative;
-    -webkit-transition: -webkit-transform 300ms ease;
-    transition: -webkit-transform 300ms ease;
-    transition: transform 300ms ease;
-    transition: transform 300ms ease, -webkit-transform 300ms ease; }
-    @media (min-width: 42rem) {
-      .hero + [data-heading='rst'] {
-        -webkit-transform: translateX(15%);
-        transform: translateX(15%); } }
+  margin: 0.7rem auto 0; }
 
 .rst-body h2 {
   font-size: calc(1rem + 0.5vw);
@@ -516,7 +488,7 @@ figcaption {
   display: block;
   font-size: 0.79683rem;
   font-style: italic;
-  padding: 0.35rem 1.4rem; }
+  margin: 0.35rem 1.4rem; }
 
 .full {
   margin-left: -1.4rem;
@@ -580,12 +552,23 @@ iframe {
   font-size: 0.79683rem;
   margin-bottom: 0.35rem; }
 
-.rst-meta {
-  margin: 0 auto;
-  max-width: 28rem; }
-
 [pubdate] {
   font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: bold; }
+
+.hero {
+  border: 0.175rem solid #b3c9d0;
+  border-radius: 0 0.35rem;
+  margin: 0 auto;
+  max-width: 30.8rem;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease; }
+
+.rst-head {
+  margin: 0 auto;
+  max-width: 28rem; }
 
 /*# sourceMappingURL=screen.css.map */

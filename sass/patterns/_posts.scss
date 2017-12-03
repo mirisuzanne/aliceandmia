@@ -2,6 +2,9 @@
 // =====
 
 
+// List Style
+// ----------
+
 [data-list],
 .rst-body {
   margin: size('spacer') auto;
@@ -35,13 +38,25 @@
 }
 
 
-.rst-meta {
-  margin: 0 auto;
-  max-width: size('page');
-}
-
-
 [pubdate] {
   @include font-family('alt');
   font-weight: bold;
+}
+
+
+// Details
+// -------
+
+.hero {
+  border: size('quarter-shim') solid color('border');
+  border-radius: $corners;
+  margin: 0 auto;
+  max-width: size('page') + size('double-gutter');
+  overflow: hidden;
+  transition: transform 300ms ease;
+}
+
+.rst-head {
+  margin: 0 auto;
+  max-width: size('page');
 }

@@ -58,17 +58,21 @@
     </figure>
   {% endif %}
 
-  {% if title %}
-    <h1 data-heading="rst">
-      {{ title|typogrify }}
-    </h1>
-  {% endif %}
+  {% if title or pub_date or post_tags %}
+    <header class="rst-head">
+      {% if title %}
+        <h1 data-heading="rst">
+          {{ title|typogrify }}
+        </h1>
+      {% endif %}
 
-  {% if pub_date or post_tags %}
-    <aside class="rst-meta">
-      {{ pubdate(pub_date) }}
-      {{ tags(post_tags) }}
-    </aside>
+      {% if pub_date or post_tags %}
+        <div class="rst-meta">
+          {{ pubdate(pub_date) }}
+          {{ tags(post_tags) }}
+        </div>
+      {% endif %}
+    </header>
   {% endif %}
 
   {% if intro %}

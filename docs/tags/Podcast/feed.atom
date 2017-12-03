@@ -131,32 +131,5 @@ Some 🤣 and some&amp;nbsp;😮.&lt;/p&gt;
 &lt;/div&gt;
 </content>
   </entry>
-  <entry xml:base="http://www.aliceandmia.com/feed.atom">
-    <title type="text">Sex, Love, &amp; Romance</title>
-    <id>http://www.aliceandmia.com/2017/09/09/love</id>
-    <updated>2017-09-09T00:00:00Z</updated>
-    <link href="http://www.aliceandmia.com/2017/09/09/love" />
-    <author>
-      <name></name>
-    </author>
-  </entry>
-  <entry xml:base="http://www.aliceandmia.com/feed.atom">
-    <title type="text">Shifting Nouns</title>
-    <id>http://www.aliceandmia.com/2017/07/09/shifting-nouns</id>
-    <updated>2017-07-09T00:00:00Z</updated>
-    <link href="http://www.aliceandmia.com/2017/07/09/shifting-nouns" />
-    <author>
-      <name></name>
-    </author>
-  </entry>
-  <entry xml:base="http://www.aliceandmia.com/feed.atom">
-    <title type="text">Mothers, Fathers, Husbands, Wives</title>
-    <id>http://www.aliceandmia.com/2017/06/21/twined-fragments</id>
-    <updated>2017-06-21T00:00:00Z</updated>
-    <link href="http://www.aliceandmia.com/2017/06/21/twined-fragments" />
-    <author>
-      <name></name>
-    </author>
-  </entry>
 </feed>
 

@@ -2,42 +2,12 @@
 // ==========
 
 
-// Hero
-// ----
-
-.hero {
-  margin: 0 auto;
-  max-width: size('page') + size('double-gutter');
-  transition: transform 300ms ease;
-
-  @include above('hero') {
-    transform: translateX(-15%);
-  }
-}
-
-
 // Headings
 // --------
 
 [data-heading='rst'] {
   font-size: size('h1');
-  margin: size('gutter') auto 0;
-  max-width: size('page');
-
-  .hero + & {
-    background: color('background');
-    border-radius: size('quarter-shim');
-    margin-top: negative('gutter');
-    max-width: size('page') + size('gutter');
-    padding: 0 size('shim');
-    position: relative;
-    transition: transform 300ms ease;
-
-    @include above('hero') {
-      transform: translateX(15%);
-    }
-  }
-
+  margin: size('shim') auto 0;
 }
 
 
@@ -126,7 +96,7 @@ figcaption {
   display: block;
   font-size: size('boiler');
   font-style: italic;
-  padding: size('half-shim') size('gutter');
+  margin: size('half-shim') size('gutter');
 }
 
 
