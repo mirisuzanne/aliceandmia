@@ -15,6 +15,11 @@
 {%- endblock -%}
 
 
+{%- block og_title -%}
+  {{ rst.title }}
+{%- endblock -%}
+
+
 {%- block og_url -%}
   {{ get_full_canonical_url(ctx.builder, slug=ctx.slug) }}
 {%- endblock -%}
