@@ -20,7 +20,7 @@
 
   <!-- Open Graph -->
   {% set image = config.image[0].src if config.image else 'hero.jpg' %}
-  {% set image = image if '://' in image else [config.canonical_url, 'static/pictures/', image]|join('') %}
+  {% set image = image if '://' in image else [config.canonical_url, 'static/images/', image]|join %}
   <meta property="og:title" content="{{ self.title() }}" />
   <meta property="og:site_name" content="{{ config.title }}" />
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
