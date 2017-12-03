@@ -45,6 +45,11 @@
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
   {% endif %}
+  {% if ctx.config.mp3 %}
+    <meta property="og:audio:type" content="audio/mpeg" />
+    <meta property="og:audio" content="http://{{ ctx.config.mp3 }}" />
+    <meta property="og:audio:secure_url" content="https://{{ ctx.config.mp3 }}" />
+  {% endif %}
 {% endblock %}
 
 

@@ -66,7 +66,7 @@ in `YAML`_ format:
   elsewhere:
     - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
       src: 'PS I Love You'
-  embed: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+  mp3: 'feeds.soundcloud.com/stream/364275896-aliceandmia-s1-episode-01-introducing-alice-mia-and-the-landscape-of-gender.mp3'
   summary: |
     “A few months into my gender transition
     I’m living full-time as a woman.
@@ -99,7 +99,7 @@ in `YAML`_ format:
    that we are hosting somewhere else (e.g. Medium).
    This requires both a ``src`` name and ``url``.
 
-5. **embed** is only required for posts with embeded audio or video,
+5. **mp3** is only required for posts with embeded audio or video,
    e.g. podcast episodes.
    See "Embeded Audio/Video Players" section below.
 
@@ -198,34 +198,28 @@ Embeded Audio/Video Players
 
 To embed audio or video,
 like an episode of the podcast,
-start by adding an ``embed`` configuration
+start by adding an ``mp3`` configuration
 to the YAML metadata.
-This should include the full embed code
-provided by SoundCloud,
-or any other source.
+This should include the full link to an mp3 file
+(with `http://` removed).
+This should be provided by the SoundCloud rss feed.
+That will provide the audio to social media sites.
 
-Once added to the metadata,
-that audio/video can be embeded in the page using
-the following embed code:
+To embed the audio/video in the page itself,
+use the following embed code:
 
 ::
 
   .. callmacro:: av.macros.j2#embed
-    :slug: '2017/12/03/introducing'
+    :src: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>'
 
     You can add an optional caption below.
 
-The **slug** is a path to the apropriate page,
-with file-type (``.rst``) and any start/end ``/`` removed.
 If no caption is given,
 set ``:caption: none``:
 
 ::
 
   .. callmacro:: av.macros.j2#embed
-    :slug: '2017/12/03/introducing'
+    :src: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>'
     :caption: none
-
-You can embed audio files
-across different pages,
-by referencing the proper source page in ``:slug:``.

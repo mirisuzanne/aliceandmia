@@ -20,6 +20,8 @@ tag_pages:
     slug: 'tag/twinedfragments'
   - tag: 'Writing'
     slug: 'tag/writing'
+  - tag: 'Podcast'
+    slug: 'tag/podcast'
 authors:
   - name: 'Allison Washington'
     url: 'http://www.allisonwashington.net'
@@ -28,8 +30,8 @@ authors:
 footer_links:
   - text: 'Patreon'
     url: 'https://www.patreon.com/aliceandmia/'
-  - text: 'Twined Fragments'
-    url: 'https://medium.com/twinedfragments/'
+  - text: 'SoundCloud'
+    url: 'https://soundcloud.com/aliceandmia'
   - text: 'Twitter'
     icon: 'twitter'
     url: 'https://twitter.com/aliceandmia/'

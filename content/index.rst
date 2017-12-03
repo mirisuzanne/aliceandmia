@@ -1,10 +1,10 @@
 public: yes
 summary: |
   Welcome to the collaborative
-  writing and (future) podcasting
+  writing and podcasting
   of trans-feminine authors
   `Allison Washington`_ &
-  `Miriam Suzanne`_ –
+  `Miriam Suzanne`_ --
   exploring gender and transition
   separated by a quarter-century.
 

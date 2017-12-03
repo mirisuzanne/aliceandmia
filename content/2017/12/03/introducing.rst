@@ -2,7 +2,7 @@ public: yes
 tags: ['Podcast']
 image:
   - src: 'podcast/e001/cover.jpg'
-embed: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+mp3: 'feeds.soundcloud.com/stream/364275896-aliceandmia-s1-episode-01-introducing-alice-mia-and-the-landscape-of-gender.mp3'
 summary: |
   Episode 1 introduces the podcast and your hosts as they ask each other about their lives and walk us through some of their feelings and experiences.
 
@@ -12,7 +12,7 @@ Episode 1: Introducing Alice, Mia, and the Landscape of (Trans)Gender
 *********************************************************************
 
 .. callmacro:: av.macros.j2#embed
-  :slug: '2017/12/03/introducing'
+  :src: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>'
   :caption: none
 
 Topics include sorting out our genders,

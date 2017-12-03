@@ -2,16 +2,13 @@
 
 
 {% macro embed(
-  slug,
-  data='embed',
+  src,
   caption='caller()'
 ) %}
   {% set caption = caller() if (caption == 'caller()') else caption %}
-  {% set page = all_pages_posts|filter_pages('slug', 'eq', slug)|get_page %}
-  {% set code = page.config[data] %}
 
   <figure class="embed full">
-    {{ code|safe }}
+    {{ src|safe }}
 
     {% if caption %}
       <figcaption>

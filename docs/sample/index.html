@@ -34,6 +34,7 @@
   
   
   
+  
 
 
   <!-- favicon.ico -->
@@ -213,7 +214,7 @@ image:
 elsewhere:
   - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
     src: 'PS I Love You'
-embed: &lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
+mp3: 'feeds.soundcloud.com/stream/364275896-aliceandmia-s1-episode-01-introducing-alice-mia-and-the-landscape-of-gender.mp3'
 summary: |
   “A few months into my gender transition
   I’m living full-time as a woman.
@@ -243,7 +244,7 @@ though <tt class="docutils literal">alt</tt> is&nbsp;also&nbsp;accepted.</li>
 <li><strong>elsewhere</strong> allows us to create links to content
 that we are hosting somewhere else (e.g. Medium).
 This requires both a <tt class="docutils literal">src</tt> name and <tt class="docutils literal">url</tt>.</li>
-<li><strong>embed</strong> is only required for posts with embeded audio or video,
+<li><strong>mp3</strong> is only required for posts with embeded audio or video,
 e.g. podcast episodes.
 See &quot;Embeded Audio/Video Players&quot;&nbsp;section&nbsp;below.</li>
 <li><strong>summary</strong> text should start with a <tt class="docutils literal">|</tt>
@@ -327,32 +328,27 @@ small enough to float&nbsp;beside&nbsp;content.</p>
 <h3>Embeded&nbsp;Audio/Video&nbsp;Players</h3>
 <p>To embed audio or video,
 like an episode of the podcast,
-start by adding an <tt class="docutils literal">embed</tt> configuration
+start by adding an <tt class="docutils literal">mp3</tt> configuration
 to the <span class="caps"><span class="caps">YAML</span></span> metadata.
-This should include the full embed code
-provided by SoundCloud,
-or any&nbsp;other&nbsp;source.</p>
-<p>Once added to the metadata,
-that audio/video can be embeded in the page using
-the following&nbsp;embed&nbsp;code:</p>
+This should include the full link to an mp3 file
+(with <cite>http://</cite> removed).
+This should be provided by the SoundCloud rss feed.
+That will provide the audio to social&nbsp;media&nbsp;sites.</p>
+<p>To embed the audio/video in the page itself,
+use the following&nbsp;embed&nbsp;code:</p>
 <pre class="literal-block">
 .. callmacro:: av.macros.j2#embed
-  :slug: '2017/12/03/introducing'
+  :src: '&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;'
 
   You can add an optional caption below.
 </pre>
-<p>The <strong>slug</strong> is a path to the apropriate page,
-with file-type (<tt class="docutils literal">.rst</tt>) and any start/end <tt class="docutils literal">/</tt> removed.
-If no caption is given,
+<p>If no caption is given,
 set <tt class="docutils literal">:caption: none</tt>:</p>
 <pre class="literal-block">
 .. callmacro:: av.macros.j2#embed
-  :slug: '2017/12/03/introducing'
+  :src: '&lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;'
   :caption: none
 </pre>
-<p>You can embed audio files
-across different pages,
-by referencing the proper source page in <tt class="docutils literal">:slug:</tt>.</p>
 </div>
 </div>
 
@@ -398,7 +394,7 @@ by referencing the proper source page in <tt class="docutils literal">:slug:</tt
       
         
 
-        <a href="https://medium.com/twinedfragments/">Twined Fragments</a>
+        <a href="https://soundcloud.com/aliceandmia">SoundCloud</a>
 
         |
       
