@@ -1,11 +1,11 @@
-Alice & Mia – Coming Soon!
-==========================
+Alice & Mia
+===========
 
 aliceandmia.com
 
 Welcome to the collaborative
-writing and (future) podcasting
-of trans-feminine authors
+writing and podcasting
+of transfeminine authors
 [Allison Washington][alice] &amp; [Miriam Suzanne][mia] –
 exploring gender and transition
 separated by a quarter-century.
