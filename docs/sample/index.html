@@ -24,11 +24,11 @@
   <meta property="og:title" content="Sample RST Document | Alice &amp; Mia" />
   <meta property="og:site_name" content="Alice &amp; Mia" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://www.aliceandmia.com/static/pictures/hero.jpg" />
+  <meta property="og:image" content="http://www.aliceandmia.com/static/pictures/podcast/e001/cover.jpg" />
   <meta property="og:url" content="http://www.aliceandmia.com/sample/" />
   <meta property="og:description" content="This is a sample document for understanding how our static-site generator works, and how to write posts. This &#34;summary&#34; section will appear on post-list pages, and be used as the large-text intro paragraph on post-detail pages." />
   <meta name="twitter:card" content="
-  summary">
+  summary_large_image">
   <meta name="twitter:site" content="@aliceandmia">
   <meta name="twitter:creator" content="@aliceandmia">
   
@@ -130,6 +130,15 @@
     
   
   
+    <figure class="hero">
+      <img src="/static/images/podcast/e001/cover.jpg" alt="" show_attrs(**kwargs) />
+
+
+      
+    </figure>
+  
+
+  
     <h1 data-heading="rst">
       Sample <span class="caps">RST</span>&nbsp;Document
     </h1>
@@ -192,10 +201,12 @@ in <a class="reference external" href="https://learn.getgrav.org/advanced/yaml">
 <pre class="literal-block">
 public: yes
 tags: ['Writing', 'Twined Fragments']
+image:
+  - src: 'podcast/e001/cover.jpg'
 elsewhere:
   - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
     src: 'PS I Love You'
-audio: &lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
+embed: &lt;iframe width=&quot;100%&quot; height=&quot;166&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;amp;color=%23ac0056&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;
 summary: |
   “A few months into my gender transition
   I’m living full-time as a woman.
@@ -218,15 +229,16 @@ to distinguish between <tt class="docutils literal">Writing</tt> and <tt class="
 or to assign posts to a particular series,
 such as <tt class="docutils literal">Twined Fragments</tt>.
 We can add more tags as we&nbsp;see&nbsp;fit.</li>
+<li><strong>image</strong>: The main image for the page.
+Only the <tt class="docutils literal">src</tt> value is required &#8212;
+relative to the <tt class="docutils literal">content/static/images/</tt> directory &#8212;
+though <tt class="docutils literal">alt</tt> is&nbsp;also&nbsp;accepted.</li>
 <li><strong>elsewhere</strong> allows us to create links to content
 that we are hosting somewhere else (e.g. Medium).
-Each item in the list requires a <tt class="docutils literal">src</tt> name
-and <tt class="docutils literal">url</tt>.</li>
-<li><strong>audio</strong> is only required for posts with embeded audio,
+This requires both a <tt class="docutils literal">src</tt> name and <tt class="docutils literal">url</tt>.</li>
+<li><strong>embed</strong> is only required for posts with embeded audio or video,
 e.g. podcast episodes.
 See &quot;Embeded Audio/Video Players&quot;&nbsp;section&nbsp;below.</li>
-</ol>
-<ol class="arabic simple" start="6">
 <li><strong>summary</strong> text should start with a <tt class="docutils literal">|</tt>
 and have a short paragraph of content
 indented below, in <span class="caps"><span class="caps">RST</span></span> format.
@@ -285,35 +297,36 @@ cillum dolore eu fugiat nulla pariatur.
 <h3>Images</h3>
 <p>Images can be added in&nbsp;<span class="caps"><span class="caps">RST</span></span>:</p>
 <pre class="literal-block">
-.. figure:: path/to/image.png
-  :alt: this short text should describe the image for non-sighted users
-  :figclass: full
-  :target: http://example.com/optional-link/
+.. callmacro:: av.macros.j2#image
+  :src: 'podcast/e001/bria.jpg'
+  :alt: 'describe the image for non-sighted users'
+  :link: 'https://www.facebook.com/BriaComics/'
 
-  This is the visible caption of the figure
-  (a simple RST paragraph).
+  This is the visible caption of the figure,
+  using RST as needed.
 </pre>
 <p>Unless we are linking an image
 on someone elses site (which is risky),
-our image paths will always begin with
-<tt class="docutils literal">/static/images/</tt>.
+our image <tt class="docutils literal">src</tt> paths are always relative to the
+<tt class="docutils literal">content/static/images/</tt> directory.
 All our images will be added to that folder.
-The <tt class="docutils literal">:figclass:</tt> attribute
-accepts <tt class="docutils literal">full</tt> (for large images),
-or <tt class="docutils literal">left</tt> or <tt class="docutils literal">right</tt> for images
+The <tt class="docutils literal">:size:</tt> attribute
+accepts <tt class="docutils literal">full</tt> &#8212;
+the default, for full-width images &#8212;
+or <tt class="docutils literal">left</tt>/<tt class="docutils literal">right</tt> for images
 small enough to float&nbsp;beside&nbsp;content.</p>
 </div>
 <div class="section" id="embeded-audio-video-players">
 <h3>Embeded&nbsp;Audio/Video&nbsp;Players</h3>
-<p>To embed audio,
+<p>To embed audio or video,
 like an episode of the podcast,
-start by adding an <tt class="docutils literal">audio</tt> configuration
+start by adding an <tt class="docutils literal">embed</tt> configuration
 to the <span class="caps"><span class="caps">YAML</span></span> metadata.
 This should include the full embed code
 provided by SoundCloud,
 or any&nbsp;other&nbsp;source.</p>
 <p>Once added to the metadata,
-that audio can be embeded in the page using
+that audio/video can be embeded in the page using
 the following&nbsp;embed&nbsp;code:</p>
 <pre class="literal-block">
 .. callmacro:: av.macros.j2#embed

@@ -65,6 +65,7 @@ $sizes: map-merge($sizes, $spacing-sizes);
 /// @preview sizes; style: output-only
 $page-sizes: (
   'page': 28rem,
+  'hero': 'page' ('times': 1.5),
   'image-float': 'page' ('divide': 2),
   'background': calc(%s + %s) ('rhythm' ('times': 6), 16vw),
 );

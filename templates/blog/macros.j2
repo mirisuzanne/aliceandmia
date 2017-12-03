@@ -35,12 +35,29 @@
 {% macro detail(
   title=none,
   intro=none,
+  image=none,
   body=none,
   action=none,
   pub_date=none,
   post_tags=none,
   tag_pages=none
 ) %}
+  {% if image %}
+    <figure class="hero">
+      {{ utility.img(
+        src=image.src,
+        alt=image.alt or '',
+        class='full'
+      ) }}
+
+      {% if image.caption %}
+        <figcaption>
+          {{ image.caption|rst }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
   {% if title %}
     <h1 data-heading="rst">
       {{ title|typogrify }}

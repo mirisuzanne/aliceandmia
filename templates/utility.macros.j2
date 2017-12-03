@@ -25,6 +25,7 @@
   content=none
 ) -%}
   {%- set content = content if (content != none) else caller() -%}
+  {%- set has_kwargs = kwargs.items() -%}
 
   {%- if url -%}
     <a href="{{ url }}"
@@ -40,12 +41,24 @@
 {%- endmacro %}
 
 
+{# Images #}
+{% macro img(
+  src,
+  alt
+) %}
+  {%- set src = src if ('://' in src) else ['/static/images/', src]|join -%}
+  {%- set has_kwargs = kwargs.items() -%}
+  <img src="{{ src }}" alt="{{ alt }}" show_attrs(**kwargs) />
+{% endmacro %}
+
+
 {# Buttons #}
 {% macro btn(
   url,
   content=none
 ) %}
-  {% set content = content if (content != none) else caller() %}
+  {%- set content = content if (content != none) else caller() -%}
+  {%- set has_kwargs = kwargs.items() -%}
 
   {{ link_if(
     url=url,

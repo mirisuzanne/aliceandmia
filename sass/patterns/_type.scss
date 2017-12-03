@@ -2,6 +2,20 @@
 // ==========
 
 
+// Hero
+// ----
+
+.hero {
+  margin: 0 auto;
+  max-width: size('page') + size('double-gutter');
+  transition: transform 300ms ease;
+
+  @include above('hero') {
+    transform: translateX(-15%);
+  }
+}
+
+
 // Headings
 // --------
 
@@ -9,6 +23,21 @@
   font-size: size('h1');
   margin: size('gutter') auto 0;
   max-width: size('page');
+
+  .hero + & {
+    background: color('background');
+    border-radius: size('quarter-shim');
+    margin-top: negative('gutter');
+    max-width: size('page') + size('gutter');
+    padding: 0 size('shim');
+    position: relative;
+    transition: transform 300ms ease;
+
+    @include above('hero') {
+      transform: translateX(15%);
+    }
+  }
+
 }
 
 
@@ -67,23 +96,37 @@ hr {
 }
 
 
+// Pre
+// ---
+
 pre {
-  $pull: negative('shim' ('plus': 'quarter-shim''));
+  $pull: negative('shim' ('plus': 'quarter-shim'));
   border-left: size('quarter-shim') solid color('border');
   font-size: size('code');
-  margin: size('gutter') 0 size('gutter') $pull;
-  padding: 0 size('shim');
+  margin: size('shim') 0 size('shim') $pull;
+  padding: size('half-shim') size('shim');
 }
 
 
 // Figures
 // -------
 
-figure,
-.figure {
+figure {
   display: block;
   margin: size('gutter') 0;
   max-width: 100vw;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+figcaption {
+  display: block;
+  font-size: size('boiler');
+  font-style: italic;
+  padding: size('half-shim') size('gutter');
 }
 
 
@@ -113,12 +156,4 @@ figure,
 
 iframe {
   box-shadow: 0 0 size('quarter-shim') color('shadow');
-}
-
-
-figcaption,
-.caption {
-  font-size: size('boiler');
-  font-style: italic;
-  padding: size('half-shim') size('gutter');
 }

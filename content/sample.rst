@@ -1,4 +1,6 @@
 public: yes
+image:
+  - src: 'podcast/e001/cover.jpg'
 summary: |
   This is a sample document
   for understanding how our static-site
@@ -59,10 +61,12 @@ in `YAML`_ format:
 
   public: yes
   tags: ['Writing', 'Twined Fragments']
+  image:
+    - src: 'podcast/e001/cover.jpg'
   elsewhere:
     - url: https://psiloveyou.xyz/twined-fragments-sex-love-romance-c292698d8f1a
       src: 'PS I Love You'
-  audio: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+  embed: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
   summary: |
     “A few months into my gender transition
     I’m living full-time as a woman.
@@ -86,12 +90,16 @@ in `YAML`_ format:
    such as ``Twined Fragments``.
    We can add more tags as we see fit.
 
-3. **elsewhere** allows us to create links to content
-   that we are hosting somewhere else (e.g. Medium).
-   Each item in the list requires a ``src`` name
-   and ``url``.
+3. **image**: The main image for the page.
+   Only the ``src`` value is required --
+   relative to the ``content/static/images/`` directory --
+   though ``alt`` is also accepted.
 
-4. **audio** is only required for posts with embeded audio,
+4. **elsewhere** allows us to create links to content
+   that we are hosting somewhere else (e.g. Medium).
+   This requires both a ``src`` name and ``url``.
+
+5. **embed** is only required for posts with embeded audio or video,
    e.g. podcast episodes.
    See "Embeded Audio/Video Players" section below.
 
@@ -165,38 +173,39 @@ Images can be added in RST:
 
 ::
 
-  .. figure:: path/to/image.png
-    :alt: this short text should describe the image for non-sighted users
-    :figclass: full
-    :target: http://example.com/optional-link/
+  .. callmacro:: av.macros.j2#image
+    :src: 'podcast/e001/bria.jpg'
+    :alt: 'describe the image for non-sighted users'
+    :link: 'https://www.facebook.com/BriaComics/'
 
-    This is the visible caption of the figure
-    (a simple RST paragraph).
+    This is the visible caption of the figure,
+    using RST as needed.
 
 Unless we are linking an image
 on someone elses site (which is risky),
-our image paths will always begin with
-``/static/images/``.
+our image ``src`` paths are always relative to the
+``content/static/images/`` directory.
 All our images will be added to that folder.
-The ``:figclass:`` attribute
-accepts ``full`` (for large images),
-or ``left`` or ``right`` for images
+The ``:size:`` attribute
+accepts ``full`` --
+the default, for full-width images --
+or ``left``/``right`` for images
 small enough to float beside content.
 
 
 Embeded Audio/Video Players
 ---------------------------
 
-To embed audio,
+To embed audio or video,
 like an episode of the podcast,
-start by adding an ``audio`` configuration
+start by adding an ``embed`` configuration
 to the YAML metadata.
 This should include the full embed code
 provided by SoundCloud,
 or any other source.
 
 Once added to the metadata,
-that audio can be embeded in the page using
+that audio/video can be embeded in the page using
 the following embed code:
 
 ::

@@ -58,6 +58,7 @@
   {{ blog.detail(
     title=rst.title if not ctx.config.hide_title,
     intro=ctx.render_summary(),
+    image=ctx.config.image[0] if ctx.config.image else none,
     body=rst.fragment,
     action=ctx.config.elsewhere,
     pub_date=ctx.pub_date,

@@ -1,10 +1,41 @@
-{% macro embed(slug, data='audio', caption='caller()') %}
+{% import "utility.macros.j2" as utility %}
+
+
+{% macro embed(
+  slug,
+  data='embed',
+  caption='caller()'
+) %}
   {% set caption = caller() if (caption == 'caller()') else caption %}
   {% set page = all_pages_posts|filter_pages('slug', 'eq', slug)|get_page %}
   {% set code = page.config[data] %}
 
   <figure class="embed full">
     {{ code|safe }}
+
+    {% if caption %}
+      <figcaption>
+        {{ caption|rst }}
+      </figcaption>
+    {% endif %}
+  </figure>
+{% endmacro %}
+
+
+{% macro image(
+  src,
+  alt='',
+  size='full',
+  link=none,
+  caption='caller()'
+) %}
+  {% set caption = caller() if (caption == 'caller()') else caption %}
+
+  <figure class="image full">
+    {{ utility.link_if(
+      url=link,
+      content=utility.img(src, alt)
+    ) }}
 
     {% if caption %}
       <figcaption>

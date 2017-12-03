@@ -419,10 +419,37 @@ dl {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse; }
 
+.hero {
+  margin: 0 auto;
+  max-width: 30.8rem;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease; }
+  @media (min-width: 42rem) {
+    .hero {
+      -webkit-transform: translateX(-15%);
+      transform: translateX(-15%); } }
+
 [data-heading='rst'] {
   font-size: calc(1rem + 0.75vw);
   margin: 1.4rem auto 0;
   max-width: 28rem; }
+  .hero + [data-heading='rst'] {
+    background: #efefef;
+    border-radius: 0.175rem;
+    margin-top: -1.4rem;
+    max-width: 29.4rem;
+    padding: 0 0.7rem;
+    position: relative;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease; }
+    @media (min-width: 42rem) {
+      .hero + [data-heading='rst'] {
+        -webkit-transform: translateX(15%);
+        transform: translateX(15%); } }
 
 .rst-body h2 {
   font-size: calc(1rem + 0.5vw);
@@ -473,16 +500,23 @@ hr::after {
   text-align: center; }
 
 pre {
-  border-left: 2px solid #b3c9d0;
+  border-left: 0.175rem solid #b3c9d0;
   font-size: 0.8em;
-  margin: 1.4rem 0;
-  padding: 0 0.7rem; }
+  margin: 0.7rem 0 0.7rem -0.875rem;
+  padding: 0.35rem 0.7rem; }
 
-figure,
-.figure {
+figure {
   display: block;
   margin: 1.4rem 0;
   max-width: 100vw; }
+  figure img {
+    width: 100%; }
+
+figcaption {
+  display: block;
+  font-size: 0.79683rem;
+  font-style: italic;
+  padding: 0.35rem 1.4rem; }
 
 .full {
   margin-left: -1.4rem;
@@ -503,12 +537,6 @@ figure,
 iframe {
   -webkit-box-shadow: 0 0 0.175rem rgba(38, 100, 120, 0.6);
   box-shadow: 0 0 0.175rem rgba(38, 100, 120, 0.6); }
-
-figcaption,
-.caption {
-  font-size: 0.79683rem;
-  font-style: italic;
-  padding: 0.35rem 1.4rem; }
 
 .rst-intro {
   font-size: calc(1rem + 0.75vw);

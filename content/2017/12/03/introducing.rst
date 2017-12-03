@@ -1,6 +1,8 @@
 public: no
 tags: ['Podcast']
-audio: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+image:
+  - src: 'podcast/e001/cover.jpg'
+embed: <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363946769&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
 summary: |
   @@@ Fill this in with
   a summary of the episode.
@@ -25,12 +27,14 @@ Sabrina Symington’s wonderful `Life of Bria`_ comics.
 
 .. _Life of Bria: https://www.facebook.com/BriaComics/
 
-.. figure:: /static/images/podcast/e001/bria.jpg
-   :alt: 'Comic: "Can you really make someone gay by hitting them in a pressure point?" "Nah. I wish. There’s so many cute girls out there I’d turn gay if I could!"'
-   :target: https://www.facebook.com/BriaComics/
-   :figclass: full
+.. callmacro:: av.macros.j2#image
+  :src: 'podcast/e001/bria.jpg'
+  :alt: 'Comic: "Can you really make someone gay by hitting them in a pressure point?" "Nah. I wish. There’s so many cute girls out there I’d turn gay if I could!"'
+  :link: 'https://www.facebook.com/BriaComics/'
 
-   © Sabrina Symington - used with permission
+   © `Sabrina Symington`_ - used with permission
+
+   .. _Sabrina Symington: https://lifeofbria.com/about/
 
 
 03.45
