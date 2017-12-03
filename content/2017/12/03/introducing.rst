@@ -78,7 +78,7 @@ Alice: ‘This is totally me!’
 
 .. _Some Clarifications on Trans Language: https://medium.com/@mirisuzanne/some-clarifications-on-trans-language-4757f1464796
 
-There are a lot of trans / gender glossaries out there, and all of them have problems born of a) the rapidly changing nature of current language around gender, and b) the inevitable biases of the authors.  With those caveats, one of the better glossaires available is `the one by Julia Serano`_.
+There are a lot of trans / gender glossaries out there, and all of them have problems born of a) the rapidly changing nature of current language around gender, and b) the inevitable biases of the authors.  With those caveats, one of the better glossaries available is `the one by Julia Serano`_.
 
 .. _the one by Julia Serano: http://www.juliaserano.com/terminology.html
 
