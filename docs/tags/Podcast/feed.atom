@@ -8,7 +8,7 @@
   <subtitle type="text">Recent blog posts</subtitle>
   <generator>Werkzeug</generator>
   <entry xml:base="http://www.aliceandmia.com/feed.atom">
-    <title type="text">Introducing Alice, Mia, and the Landscape of (Trans)Gender</title>
+    <title type="text">The Landscape of (Trans)Gender</title>
     <id>http://www.aliceandmia.com/2017/12/03/introducing</id>
     <updated>2017-12-03T00:00:00Z</updated>
     <link href="http://www.aliceandmia.com/2017/12/03/introducing" />
