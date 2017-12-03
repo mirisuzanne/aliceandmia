@@ -21,12 +21,12 @@
   <!-- Open Graph -->
   {% set image = config.image[0].src if config.image else 'hero.jpg' %}
   {% set image = image if '://' in image else [config.canonical_url, 'static/images/', image]|join %}
-  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}" />
-  <meta property="og:site_name" content="{{ config.title }}" />
-  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
-  <meta property="og:image" content="{{ image }}" />
-  <meta property="og:url" content="{% block og_url %}{{ config.canonical_url }}{% endblock og_url %}" />
-  <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:image" content="{{ image }}">
+  <meta property="og:url" content="{% block og_url %}{{ config.canonical_url }}{% endblock og_url %}">
+  <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
   <meta name="twitter:card" content="{% block twitter_type %}summary{% endblock %}">
   <meta name="twitter:site" content="@aliceandmia">
   <meta name="twitter:creator" content="@aliceandmia">
