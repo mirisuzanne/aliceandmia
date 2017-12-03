@@ -8,9 +8,9 @@ summary: |
   Episode 1 introduces the podcast and your hosts as they ask each other about their lives and walk us through some of their feelings and experiences.
 
 
-******************************
-The Landscape of (Trans)Gender
-******************************
+*******************************************************
+Introducing Alice, Mia, and the (Trans)Gender Landscape
+*******************************************************
 
 .. callmacro:: av.macros.j2#embed
   :src: '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/364275896&amp;color=%23ac0056&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>'
