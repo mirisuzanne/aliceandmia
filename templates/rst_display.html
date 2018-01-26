@@ -31,7 +31,9 @@
 
 
 {%- block og_type -%}
-  {{ 'article' if ctx.pub_date else super() }}
+  {%- set type = ctx.pub_date if ctx.config.mp3 else super() -%}
+  {%- set type = 'video.movie' if ctx.config.mp3 else type -%}
+  {{- type -}}
 {%- endblock -%}
 
 
@@ -51,9 +53,14 @@
     {% endfor %}
   {% endif %}
   {% if ctx.config.mp3 %}
-    <meta property="og:audio:type" content="audio/mpeg" />
+    <meta property="og:audio:type" content="audio/mp3" />
     <meta property="og:audio" content="http://{{ ctx.config.mp3 }}" />
     <meta property="og:audio:secure_url" content="https://{{ ctx.config.mp3 }}" />
+    <meta property="og:video" content="http://{{ ctx.config.mp3 }}" />
+    <meta property="og:video:secure_url" content="https://{{ ctx.config.mp3 }}" />
+    <meta property="og:video:type" content="video/mp4" />
+    <meta property="og:video:width" content="480" />
+    <meta property="og:video:height" content="50" />
   {% endif %}
 {% endblock %}
 
