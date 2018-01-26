@@ -38,8 +38,8 @@
 
 
 {%- block twitter_type -%}
-  {% set has_image = (ctx.config.image and ctx.config.image[0].src) %}
-  {{ 'summary_large_image' if has_image else super() }}
+  {%- set has_image = (ctx.config.image and ctx.config.image[0].src) -%}
+  {{- 'summary_large_image' if has_image else super() -}}
 {%- endblock -%}
 
 

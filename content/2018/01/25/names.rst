@@ -2,7 +2,7 @@ public: yes
 tags: ['Podcast']
 image:
   - src: 'podcast/e002/fragments.jpg'
-mp3: 'http://feeds.soundcloud.com/stream/389192445-aliceandmia-s1-ep-02-chosen-names-cis-women-and-the-woodwork.mp3'
+mp3: 'feeds.soundcloud.com/stream/389192445-aliceandmia-s1-ep-02-chosen-names-cis-women-and-the-woodwork.mp3'
 summary: |
   In which Alice and Mia talk about chosen names,
   the perception cis women,
