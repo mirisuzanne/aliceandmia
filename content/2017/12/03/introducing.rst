@@ -3,7 +3,7 @@ tags: ['Podcast']
 image:
   - src: 'hero.jpg'
     alt: '[  ] not clear to me [  ] a body [  ]'
-mp3: 'feeds.soundcloud.com/stream/364275896-aliceandmia-s1-episode-01-introducing-alice-mia-and-the-landscape-of-gender.mp3'
+mp4: 's01e01'
 summary: |
   Episode 1 introduces the podcast and your hosts as they ask each other about their lives and walk us through some of their feelings and experiences.
 

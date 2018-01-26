@@ -30,34 +30,27 @@
 {%- endblock -%}
 
 
-{%- block og_type -%}
-  {%- set type = ctx.pub_date if ctx.config.mp3 else super() -%}
-  {%- set type = 'video.movie' if ctx.config.mp3 else type -%}
-  {{- type -}}
-{%- endblock -%}
-
-
 {%- block twitter_type -%}
   {%- set has_image = (ctx.config.image and ctx.config.image[0].src) -%}
   {{- 'summary_large_image' if has_image else super() -}}
 {%- endblock -%}
 
 
+{%- block og_type -%}
+  {{- 'article' if ctx.pub_date else super() -}}
+{%- endblock -%}
+
+
 {% block extra_og %}
   {% if ctx.pub_date %}
     <meta property="article:published_time" content="{{ ctx.pub_date.isoformat() }}" />
-  {% endif %}
-  {% if ctx.tags %}
     {% for tag in ctx.tags %}
       <meta property="article:tag" content="{{ tag }}" />
     {% endfor %}
   {% endif %}
-  {% if ctx.config.mp3 %}
-    <meta property="og:audio:type" content="audio/mp3" />
-    <meta property="og:audio" content="http://{{ ctx.config.mp3 }}" />
-    <meta property="og:audio:secure_url" content="https://{{ ctx.config.mp3 }}" />
-    <meta property="og:video" content="http://{{ ctx.config.mp3 }}" />
-    <meta property="og:video:secure_url" content="https://{{ ctx.config.mp3 }}" />
+  {% if ctx.config.mp4 %}
+    {% set mp4 = [config.canonical_url, 'static/video/', ctx.config.mp4, '.mp4']|join %}
+    <meta property="og:video" content="{{ mp4 }}" />
     <meta property="og:video:type" content="video/mp4" />
     <meta property="og:video:width" content="480" />
     <meta property="og:video:height" content="50" />
